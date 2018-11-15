@@ -1,1 +1,16 @@
+/*14 Nov ver 1.0.0*/
+/*background image*/
+body{background-image: url(../static/background.jpg);background-attachment: fixed;}
+/*guide bar on the top*/
+.guideBar {height:75px;width:100%;background-color:#CCCCCC;position:fixed;top:0px;left:0px;font-family:Arial}
+/*main content background*/
+.main {background-color:#006699;padding:2em;margin-left:5%;margin-right:5%;margin-top:55pt}
+.attractions {font-family:Arial,Helvitica,sans-self;width:42%;height:320pt;background-color:#FFFFFF;float:left;margin-left:4%;	}
+.atdiv{float:left;width:250px;padding-left:10px;padding-bottom:10px;}
+.pic {padding-left:10px;padding-top:20px}
+.text {float:left;width:250px;padding-left:10px;padding-bottom:10px;}
+.clearFix{clear: both;}
+.main2 {background-color:#006699;padding:2em;margin-left:5%;margin-right:5%;height:440pt;}
+.main3 {background-color:#006699;padding:2em;margin-left:5%;margin-right:5%;height:320pt;margin-top:55pt}
 
+/**/
