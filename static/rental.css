@@ -26,7 +26,7 @@ body{background-image: url(../static/background.jpg);background-attachment: fixe
 /* Hide the images by default */
 .photo {
   display: none;
-  width:30%;
+  width:20%;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
