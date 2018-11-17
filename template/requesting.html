@@ -1,11 +1,61 @@
+<!DOCTYPE html>
 <html>
-	<head>    
-       <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
-       <title>request rental</title> 
-	   <link rel="stylesheet" href="../static/rental.css" type="text/css" />
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+        <title>Requst for a rental</title> 
+	    <link rel="stylesheet" href="../static/rental.css" type="text/css" />
 	</head>
-  
 	<body>
-  
+		<div class="guideBar">
+		</div>
+		
+		
+		<div class="main" >
+			<div class="title">
+				<p>Request details</p>
+			</div>
+		</div>
+		
+	
+		<div class="main">
+		
+			<form action="addDetails">
+			<!-- set time for check in and out  -->	
+				Check in<input type="date" name="checkIn" placeholder="dd-mm-yyyy" value="dd-mm-yyyy"> 
+				Check out<input type="date" name="checkOut" placeholder="dd-mm-yyyy" value="dd-mm-yyyy">
+				<br><br>
+			<!-- input title and name	 -->
+				Title<input list="title" name="title">
+					 <datalist id="title">
+						<option value="Mr">
+						<option value="Mrs">
+						<option value="Miss">
+						<option value="Ms">
+					</datalist>
+				Name<input type="text" name="firstName">
+				<br><br>
+			<!-- set numbers of guests -->
+				Adult(s)<input list="adultsNumbers" name="adultsNumbers">
+					 <datalist id="adultsNumbers">
+						<option value="1">
+						<option value="2">
+						<option value="3">
+						<option value="4">
+					</datalist>
+				Child(ren)<input list="childrenNumbers" name="childrenNumbers">
+					 <datalist id="childrenNumbers">
+						<option value="0">
+						<option value="1">
+						<option value="2">
+					</datalist>
+					<br><br>
+			<!-- input contact email		 -->
+				E-mail<input type="email" name="email">
+				<br><br>
+			<!-- submit button	 -->
+				<br><br>
+				<input type="submit" value="submit">
+			</form>
+		</div>
 	</body>
- </html>
+</html>
