@@ -32,7 +32,7 @@ def addDetails():
 	childrenNumbers=request.form[('childrenNumbers')]
 	email=request.form[('email')]
 	newDetail=[checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email]	
-	fileName='static\\skills.csv'
+	fileName='static\\requestDetail.csv'
 	detailList=readFile(fileName)
 	detailList.append(newDetail)
 			
