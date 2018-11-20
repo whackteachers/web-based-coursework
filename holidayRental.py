@@ -21,24 +21,39 @@ def writeFile(aList,aFile):
         write.writerows(aList)
      return	
 	 
-	 
-@app.route('/addDetails')
+	@app.route('/rentalDetail', methods = ['GET'])
+
+	def rentalDetail():
+    requestFile='static\\requestDetail.csv'
+    detailList= readFile(requestFile)
+    checkInTime=[row[0]for row in detailList]
+    checkOutTime=[row[1]for row in detailList]
+    confirmation=[row[7]for row in detailList]
+    return render_template('request.html', checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation)
+    
+@app.route('/addDetails', methods= ['POST','GET'])
 def addDetails():
-	checkIn=request.form[('checkIn')]
-	checkOut=request.form[('checkOut')]
-	title=request.form[('title')]
-	firstName=request.form[('firstName')]
-	adultsNumbers=request.form[('adultsNumbers')]
-	childrenNumbers=request.form[('childrenNumbers')]
-	email=request.form[('email')]
-	newDetail=[checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email]	
-	fileName='static\\requestDetail.csv'
-	detailList=readFile(fileName)
-	detailList.append(newDetail)
-			
-	writeFile(detailList,fileName)
-	return render_template('requesting.html',detailList =detailList)
-	
+    checkIn=request.form[('checkIn')]
+    checkOut=request.form[('checkOut')]
+    title=request.form[('title')]
+    firstName=request.form[('firstName')]
+    adultsNumbers=request.form[('adultsNumbers')]
+    childrenNumbers=request.form[('childrenNumbers')]
+    email=request.form[('email')]
+    confirmation='unconfirmed'
+    newDetail=[checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email,confirmation]	
+    fileName='static\\requestDetail.csv'
+    detailList=readFile(fileName)
+    detailList.append(newDetail)
+    writeFile(detailList,fileName)
+    MessageBox = ctypes.windll.user32.MessageBoxW
+    MessageBox(None, 'Your request has been sent to the admin, please check your email later!', 'Nearly finish', 0)
+    requestFile='static\\requestDetail.csv'
+    detailList= readFile(requestFile)
+    checkInTime=[row[0]for row in detailList]
+    checkOutTime=[row[1]for row in detailList]
+    confirmation=[row[7]for row in detailList]
+    return render_template('request.html',checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation)
 	
 if __name__ == '__main__':
  app.run(debug = True)
