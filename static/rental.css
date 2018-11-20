@@ -11,7 +11,7 @@ body{
 	width:100%;
 	background-color:#0A2861;
 	position:fixed;
-	text-align: center;
+	text-align: left;
 	top:0px;
 	left:0px;
 	overflow: hidden;
@@ -19,6 +19,7 @@ body{
 	padding: 0;
 	margin: 0;
 	font-family:Arial;
+	z-index: 999999;
 }
 .navBar li{
 	display: inline-block;
@@ -33,6 +34,15 @@ body{
 	text-decoration: none;
 	color: inherit;
 }
+@media screen and (max-width: 640px){
+	ul li{
+		box-sizing: border-box;
+		width: 100%;
+		padding: 15%;
+		text-align: left;
+	}
+}
+
 .mini{
 	position:absolute;
 	top: 100px;
@@ -50,7 +60,8 @@ body{
 	padding:2em;
 	margin-left:5%;
 	margin-right:5%;
-	margin-top:3vh;
+	margin-top:10vh;
+	margin: 75px;
 }
 /*title font*/
 .title{
