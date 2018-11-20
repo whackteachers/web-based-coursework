@@ -33,6 +33,12 @@ body{
 	text-decoration: none;
 	color: inherit;
 }
+.mini{
+	position:absolute;
+	top: 30px;
+	right: 20%
+	
+}
 /*main content background*/
 .main {
 	background-color:#99CCFF;

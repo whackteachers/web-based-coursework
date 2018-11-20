@@ -10,13 +10,13 @@
 		<div class="navBar">
 			<ul>
 				<li><a href="#description">Apartment Description</a></li>
-				<li><a href="#">Location</a></li>
-				<li><a href="#">Facilities</a></li>
-				<li><a href="#">Rooms</a></li>
-				<li><a href="#">Transport</a></li>
-				<li><a href="#">Other Details</a></li>
-				<li><a href="#">Owner</a></li>
-				<li><a href="#">Reviews</a></li>
+				<li><a href="#location">Location</a></li>
+				<li><a href="#facilities">Facilities</a></li>
+				<li><a href="#rooms">Rooms</a></li>
+				<li><a href="#transport">Transport</a></li>
+				<li><a href="#details">Other Details</a></li>
+				<li><a href="#owner">Owner</a></li>
+				<li><a href="#reviews">Reviews</a></li>
 			</ul>
 		</div>			
 
@@ -54,20 +54,22 @@
 			</div>
 			<!--open new column-->
 			<!--display little map-->
-			<div class="mapouter">
-				<div class="gmap_canvas">
-					<iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Lochend%20Park%20View&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-					</iframe>
+			<div class="mini">
+				<div class="mapouter">
+					<div class="gmap_canvas">
+						<iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Lochend%20Park%20View&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+						</iframe>
+					</div>
 				</div>
+				<!--display address-->
+				<h2>Address</h2>
+				<p id = address>15 Lochend Park View, Edinburgh, EH7 5FX, United Kingdom</p>
 			</div>
-			<!--display address-->
-			<h2>Address</h2>
-			<p id = address>15 Lochend Park View, Edinburgh, EH7 5FX, United Kingdom</p>
 			<!--go down,display name of apartment along with rating and price per night-->
 			<h1>Lochend Park View Apart. A&B </h1>
 			<div class=price>£71<br>per night</div>
 			<!--apartment description-->
-			<div class=description>
+			<div id=description>
 				<h2>Apartment Description</h2>
 				
 				<p>Located on the 3rd floor with lift access in the building.</p>
@@ -88,7 +90,7 @@
 				<p>Genius luxury 1500 pocket sprung and hypo-allergenic mattresses -hotel style zip and link beds so can be make up with 2 single beds or a king size bed in each bedroom.</p>
 			</div>
 			<!--location-->
-			<div class=location>
+			<div id=location>
 				<h2>Location</h2>
 				
 				<p>5 minutes walk to Meadowbank shopping centre with Sainsbury's superstore,M&S,TKmaxx,KFC etc., also have a Tesco super store open till midnight.</p>
@@ -105,20 +107,20 @@
 				<p>Close to The Shore in Leith, where you will find a plentiful supply of pubs,restaurants, including Michelin Star dining and the Royal Yacht Britannia in Ocean Terminal Shopping Centre. </p>
 			</div>
 			<!--facilities-->
-			<div class=facilities>
+			<div id=facilities>
 				<h2>Facilities</h2>
 				
 				
 			</div>
 			<!--open new column-->
 			<!--rooms-->
-			<div class=rooms>
+			<div id=rooms>
 				<!-- Size: 645 sq. ft.				2 bathroom -->
 				<!-- 1 twin en-suite bedroom		1 master bedroom -->
 				<!-- 1 kitchen						1 living room-->
 			</div>
 			<!--transport-->
-			<div class=transport>
+			<div id=transport>
 				<h2>Transport</h2>
 				
 				<p>24/7 bus services nearby</p>
@@ -138,7 +140,7 @@
 				<p>15-25 minutes walk to Waverley Train Station,Royal Mile and Princes St. </p>
 			</div>
 			<!--go down,display other details-->
-			<div class=details>
+			<div id=details>
 				<h2>Other details</h2>
 				
 				<p>check-in time: after 14:00<br>
@@ -154,14 +156,14 @@
 				</p>
 			</div>
 			<!--owner--><!--with contact owner button-->
-			<div class=owner>
+			<div id=owner>
 				<h2>Owner</h2>        <button type="button" id=contOwner>Contact owner</button>
 				
 				<h4>Owner name</h4>
 				<p>Property description</p>
 			</div>
 			<!--reviews-->
-			<div class=reviews>
+			<div id=reviews>
 				<h2>Reviews</h2>
 				
 				<!-- name ----------------------------------------------------------------------------------------------- -->
