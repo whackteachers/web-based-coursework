@@ -17,7 +17,7 @@
 			
 			
 			<div id="tableBox">
-			<form action="addDetails">
+			<form action="addDetails" method= "post" >
 				<table cellpadding=10 width=400>
 				<tr>
 				<!-- set time for check in and out  -->	
@@ -72,6 +72,40 @@
 				
 			</form>
 			</div>
+            <table>
+        {% for line in checkInTime%}
+            <tr>
+               {% for items in line%}
+                <td>
+                    {{items}}
+                </td>
+                {% endfor%}
+            </tr>
+         {%endfor%}
+         
+      </table>
+      <table>
+      {% for line in checkOutTime%}
+            <tr>
+               {% for items in line%}
+                <td>
+                    {{items}}
+                </td>
+                {% endfor%}
+            </tr>
+         {%endfor%}
+      </table>
+      <table>
+      {% for line in confirmation%}
+            <tr>
+               {% for items in line%}
+                <td>
+                    {{items}}
+                </td>
+                {% endfor%}
+            </tr>
+         {%endfor%}
+      </table>
 		</div>
 	</body>
 </html>
