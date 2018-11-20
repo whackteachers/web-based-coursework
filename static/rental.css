@@ -1,30 +1,137 @@
 /*14 Nov ver 1.0.0*/
 /*background image*/
-body{background-image: url(../static/background.jpg);background-attachment: fixed;background-size:cover}
+body{
+	background-image: url(../static/background.jpg);
+	background-attachment: fixed;
+	background-size:cover;
+}
 /*guide bar on the top*/
-.guideBar {height:75px;width:100%;background-color:#CCCCCC;position:fixed;top:0px;left:0px;font-family:Arial}
+.navBar {
+	height:75px;
+	width:100%;
+	background-color:#0A2861;
+	position:fixed;
+	text-align: center;
+	top:0px;
+	left:0px;
+	overflow: hidden;
+	color: white;
+	padding: 0;
+	margin: 0;
+	font-family:Arial;
+}
+.navBar li{
+	display: inline-block;
+	padding: 20px;
+	font-family: sans-serif;
+}
+.navBar li:hover{
+	background-color: #337AFF;
+}
+.navBar a{
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
 /*main content background*/
-.main {background-color:#99CCFF;padding:2em;margin-left:5%;margin-right:5%;margin-top:3vh}
+.main {
+	background-color:#99CCFF;
+	padding:2em;
+	margin-left:5%;
+	margin-right:5%;
+	margin-top:3vh;
+}
 /*title font*/
-.title{padding-left:5%;font-family:Arial,Helvitica,sans-self;font-weight: bold;color:#FFFFFF;font-size:5vw}
+.title{
+	padding-left:5%;
+	font-family:Arial,Helvitica,sans-self;
+	font-weight: bold;
+	color:#FFFFFF;
+	font-size:5vw;
+}
 /*attractions css*/
-	.attractions {font-family:Arial,Helvitica,sans-self;width:36vw;height:62vh;background-color:#FFFFFF;float:left;margin-left:60px;	}
-	.atdiv{float:left;width:17vw;padding-left:10px;padding-bottom:10px;}
-	.pic {padding-left:10px;padding-top:20px}
-	.text {float:left;width:17vw;padding-left:10px;padding-bottom:10px;}
-	.clearFix{clear: both;}
-	.main2 {background-color:#99CCFF;padding:2em;margin-left:5%;margin-right:5%;height:320pt;}
-	
-	/*attributes to big map for attractions*/
-	#bigMap {padding-left:3%;background-color:#99CCFF;padding:2em;margin-left:5%;margin-right:5%;height:70vh;width:84vw}
-	#bigMap2{width:75.8vw; height:65vh;border:none}
-	.attractions2 {font-family:Arial,Helvitica,sans-self;width:36vw;height:58vh;float:left;margin-left:60px;}
-	
-	/*attributes to small map for attractions and size for pictures*/
-	.mapouter{text-align:right;height:15.5vw;width:24.5vh}
-	.gmap_canvas {overflow:hidden;background:none!important;height:15.5vw;width:24.5vh}
-	.picMap{border:none;width:15.5vw; height:24.5vh}
-	.attractions2 {font-family:Arial,Helvitica,sans-self;width:36vw;height:58vh;float:left;margin-left:60px;}
+.attractions {
+	font-family:Arial,Helvitica,sans-self;
+	width:36vw;
+	height:62vh;
+	background-color:#FFFFFF;
+	float:left;
+	margin-left:60px;
+}
+.atdiv{
+	float:left;
+	width:17vw;
+	padding-left:10px;
+	padding-bottom:10px;
+}
+.pic {
+	padding-left:10px;
+	padding-top:20px;
+}
+.text {
+	float:left;
+	width:17vw;
+	padding-left:10px;
+	padding-bottom:10px;
+}
+.clearFix{
+	clear: both;
+}
+.main2 {
+	background-color:#99CCFF;
+	padding:2em;
+	margin-left:5%;
+	margin-right:5%;
+	height:320pt;
+}
+
+/*attributes to big map for attractions*/
+#bigMap {
+	padding-left:3%;
+	background-color:#99CCFF;
+	padding:2em;
+	margin-left:5%;
+	margin-right:5%;
+	height:70vh;
+	width:84vw;
+}
+#bigMap2{
+	width:75.8vw; 
+	height:65vh;
+	border:none;
+}
+.attractions2 {
+	font-family:Arial,Helvitica,sans-self;
+	width:36vw;
+	height:58vh;
+	float:left;
+	margin-left:60px;
+}
+
+/*attributes to small map for attractions and size for pictures*/
+.mapouter{
+	text-align:right;
+	height:15.5vw;
+	width:24.5vh;
+}
+.gmap_canvas {
+	overflow:hidden;
+	background:none!important;
+	height:15.5vw;
+	width:24.5vh;
+}
+.picMap{
+	border:none;
+	width:15.5vw; 
+	height:24.5vh;
+}
+.attractions2 {
+	font-family:Arial,Helvitica,sans-self;
+	width:36vw;
+	height:58vh;
+	float:left;
+	margin-left:60px;
+}
 
 /**/
 * {
