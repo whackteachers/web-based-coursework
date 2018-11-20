@@ -25,6 +25,8 @@ body{
 	display: inline-block;
 	padding: 20px;
 	font-family: sans-serif;
+	-webkit-transition-duration: 0.4s; 
+   transition-duration: 0.4s;
 }
 .navBar li:hover{
 	background-color: #337AFF;
@@ -66,10 +68,10 @@ body{
 /*title font*/
 .title{
 	padding-left:5%;
-	font-family:Arial,Helvitica,sans-self;
+	font-family:sans-self;
 	font-weight: bold;
 	color:#FFFFFF;
-	font-size:5vw;
+	font-size:5em;
 }
 /*attractions css*/
 .attractions {
@@ -105,6 +107,14 @@ body{
 	margin-left:5%;
 	margin-right:5%;
 	height:75vh;
+}
+.attitle {
+	margin-top:3vh;
+	background-color:#99CCFF;
+	padding:2em;
+	margin-left:5%;
+	margin-right:5%;
+	height:35vh;
 }
 
 /*attributes to big map for attractions*/
@@ -155,6 +165,7 @@ body{
 	margin-left:60px;
 }
 /* rental page css */
+	#tableBox{margin-left:4%}
 /* botton design */
 .button {
     
@@ -193,6 +204,7 @@ body{
 .photo {
   display: none;
   width:30%;
+  
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -221,11 +233,14 @@ body{
 .next {
   right: 38%;
   border-radius: 3px 0 0 3px;
+  
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,.next:hover {
   background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition-duration: 0.2s; 
+   transition-duration: 0.2s;
 }
 
 /* Number text (1/3 etc) */
