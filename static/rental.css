@@ -51,10 +51,9 @@ body{
 	right: 10%
 	
 }
-.price{
+.price,{
 	position:absolute;
 	right: 10%
-	
 }
 /*main content background*/
 .main {
@@ -117,6 +116,17 @@ body{
 	height:35vh;
 }
 
+.roomsNtransport {
+	width: vw;
+}
+
+.lc{
+	float: left;
+	width: 10em;
+}
+.rc{
+	margin-left: 10em;
+}
 /*attributes to big map for attractions*/
 #bigMap {
 	padding-left:3%;
