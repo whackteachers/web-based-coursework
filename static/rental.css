@@ -35,8 +35,13 @@ body{
 }
 .mini{
 	position:absolute;
-	top: 30px;
-	right: 20%
+	top: 100px;
+	right: 10%
+	
+}
+.price{
+	position:absolute;
+	right: 10%
 	
 }
 /*main content background*/
@@ -146,7 +151,7 @@ body{
 
 /* Position the image container (needed to position the left and right arrows) */
 .gallery {
-  position: relative;
+  position: static;
 }
 
 /* Hide the images by default */
