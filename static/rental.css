@@ -23,7 +23,6 @@ body{
 }
 .navBar li{
 	display: inline-block;
-	
 	font-family: sans-serif;
 	-webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
@@ -49,16 +48,58 @@ body{
 .mini{
 	position:absolute;
 	top: 100px;
-	right: 10%
-	
+	right: 10%;
+	text-align:right;
+	grid-area: address;
 }
 .anchor{
 	margin-top: -75px;
 	padding-top:75px;
 }
-.price,{
+.price{
 	position:absolute;
 	right: 10%
+}
+.upper_grid{
+	display: inline-grid;
+	grid-column-gap: 15%;
+	grid-row-gap: 50px;
+	grid-template-areas:
+		'gallery address'
+}
+#facilities{
+	grid-area:facilities;
+}
+#rooms{
+	grid-area:rooms;
+}
+#transport{
+	grid-area:transport;
+	grid-row: 1 / span 2;
+}
+.grid{
+	display: inline-grid;
+	grid-column-gap: 15%;
+	grid-row-gap: 50px;
+	grid-template-areas:
+		'facilities rooms'
+		'. transport'
+}
+#fhalf{
+	grid-area:fhalf;
+}
+#shalf{
+	grid-area:shalf;
+}
+.subgrid{
+	display: inline-grid;
+	grid-column-gap: 50px;
+	grid-row-gap: 50px;
+	grid-template-areas:
+		'fhalf shalf'
+}
+span{
+	font-size: small;
 }
 /*main content background*/
 .main {
@@ -123,14 +164,14 @@ body{
 
 .roomsNtransport {
 	width: vw;
+	list-style-type: none;
 }
 
-.lc{
-	float: left;
-	width: 10em;
-}
-.rc{
+.rmc{
 	margin-left: 10em;
+	columns: 2;
+	-webkit-columns: 2;
+	-moz-columns: 2;
 }
 /*attributes to big map for attractions*/
 #bigMap {
@@ -161,6 +202,17 @@ body{
 	height:24.5vh;
 	width:15.5vw;
 }
+.addMap{
+	text-align:right;
+	right: 10%;
+	margin: 0;
+	border:none;
+	height:50vh;
+	width:50vw;
+	overflow:hidden;
+	background:none!important;
+}
+
 .gmap_canvas {
 	overflow:hidden;
 	background:none!important;
@@ -211,15 +263,14 @@ body{
 }
 
 /* Position the image container (needed to position the left and right arrows) */
-.gallery {
-  position: static;
+.container {
+  position: relative;
+  grid-area: gallery;
 }
 
 /* Hide the images by default */
-.photo {
+.mySlides {
   display: none;
-  width:30%;
-  
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -246,22 +297,20 @@ body{
 
 /* Position the "next button" to the right */
 .next {
-  right: 38%;
+  right: 100px;
   border-radius: 3px 0 0 3px;
-  
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,.next:hover {
+.prev:hover,
+.next:hover {
   background-color: rgba(0, 0, 0, 0.8);
-  -webkit-transition-duration: 0.2s; 
-   transition-duration: 0.2s;
 }
 
 /* Number text (1/3 etc) */
-.photoNum {
+.numbertext {
   color: #f2f2f2;
-  font-size: 20px;
+  font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
@@ -285,7 +334,6 @@ body{
 .column {
   float: left;
   width: 16.66%;
-  height: 10%;
 }
 
 /* Add a transparency effect for thumnbail images */

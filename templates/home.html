@@ -24,44 +24,55 @@
 
 		<div class="main">
 			<!--display property photo gallery-->
-			<div class="gallery">
-				<div class="photo">
-					<div class="photoNum">1 / 6</div>
-						<img src="../static/property/property1.jpg">
-				</div>
-				<div class="photo">
-					<div class="photoNum">2 / 6</div>
-						<img src="../static/property/property2.jpg">
-				</div>
-				<div class="photo">
-					<div class="photoNum">3 / 6</div>
-						<img src="../static/property/property3.jpg">
-				</div>
-				
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1)">&#10095;</a>
-				
-				<!-- <div class="row"> -->
-					<!-- <div class="column"> -->
-					  <!-- <img class="demo cursor" src="../static/property/property1.jpg" onclick="currentSlide(1)" alt="1"> -->
+			<div class="upper_grid">
+				<div class="gallery">
+					<div class="mySlides">
+						<div class="numbertext">1 / 6</div>
+							<img src="../static/property/property1.jpg">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">2 / 6</div>
+							<img src="../static/property/property2.jpg">
+					</div>
+					<div class="mySlides">
+						<div class="numbertext">3 / 6</div>
+							<img src="../static/property/property3.jpg">
+					</div>
+					
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+					
+					<!-- <div class="row"> -->
+						<!-- <div class="column"> -->
+						  <!-- <img class="demo cursor" src="../static/property/property1.jpg" onclick="currentSlide(1)" alt="1"> -->
+						<!-- </div> -->
+						<!-- <div class="column">  -->
+						  <!-- <img class="demo cursor" src="../static/property/property2.jpg" onclick="currentSlide(2)" alt="2"> -->
+						<!-- </div> -->
+						<!-- <div class="column"> -->
+						  <!-- <img class="demo cursor" src="../static/property/property3.jpg" onclick="currentSlide(3)" alt="3"> -->
+						<!-- </div> -->
 					<!-- </div> -->
-					<!-- <div class="column">  -->
-					  <!-- <img class="demo cursor" src="../static/property/property2.jpg" onclick="currentSlide(2)" alt="2"> -->
-					<!-- </div> -->
-					<!-- <div class="column"> -->
-					  <!-- <img class="demo cursor" src="../static/property/property3.jpg" onclick="currentSlide(3)" alt="3"> -->
-					<!-- </div> -->
-				<!-- </div> -->
+						<div class="row">
+							<div class="column">
+							  <img class="demo cursor" src="../static/property/property1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+							</div>
+							<div class="column"> 
+							  <img class="demo cursor" src="../static/property/property2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+							</div>
+							<div class="column">
+							  <img class="demo cursor" src="../static/property/property3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+							</div>
+						</div>
 
+				</div>
 			</div>
 			<!--open new column-->
 			<!--display little map-->
 			<div class="mini">
-				<div class="mapouter">
-					<div class="gmap_canvas">
-						<iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Lochend%20Park%20View&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+				<div class="addMap">
+						<iframe src="https://maps.google.com/maps?q=Lochend%20Park%20View&t=&z=17&ie=UTF8&iwloc=&output=embed">
 						</iframe>
-					</div>
 				</div>
 				<!--display address-->
 				<h2>Address</h2>
@@ -71,7 +82,7 @@
 			<h1>Lochend Park View Apart. A&B </h1>
 			<div class=price>£71<br>per night</div>
 			<!--apartment description-->
-			<div id=description>
+			<div id=description class ="anchor">
 				<h2>Apartment Description</h2>
 				
 				<p>Located on the 3rd floor with lift access in the building.</p>
@@ -92,7 +103,7 @@
 				<p>Genius luxury 1500 pocket sprung and hypo-allergenic mattresses -hotel style zip and link beds so can be make up with 2 single beds or a king size bed in each bedroom.</p>
 			</div>
 			<!--location-->
-			<div id=location>
+			<div id=location class ="anchor">
 				<h2>Location</h2>
 				
 				<p>5 minutes walk to Meadowbank shopping centre with Sainsbury's superstore,M&S,TKmaxx,KFC etc., also have a Tesco super store open till midnight.</p>
@@ -109,58 +120,81 @@
 				<p>Close to The Shore in Leith, where you will find a plentiful supply of pubs,restaurants, including Michelin Star dining and the Royal Yacht Britannia in Ocean Terminal Shopping Centre. </p>
 			</div>
 			<!--facilities-->
-			<div id=facilities>
-				<h2>Facilities</h2>
-				
-				
-			</div>
-			<!--open new column-->
-			<div class=roomsNtransport>
-			<!--rooms-->
-				<div id=rooms>
-					<h2>Rooms</h2>
+			<div class = "grid">
+				<div id=facilities class ="anchor">
+					<h2>Facilities</h2>
 					
-					<div id=lc>
-						<ul>
-							<li>Size: 645 sq. ft.</li>
-							<li>1 twin en-suite bedroom</li>
-							<li>1 kitchen</li>
-						</ul>
+					<div class="subGrid">
+						<div id=fhalf>
+							<ul>
+								<li>Heating<br><span>gas central heating</span></li><br>
+								<li>Parking<br><span>large free car park next to the building</span></li><br>
+								<li>Garage<br><span>free private underground car park</span></li><br>
+								<li>Iron & Board</li><br>
+								<li>Hair Dryer</li><br>
+								<li>Elevator<br><span>access to the apartment and the underground car park</span> </li><br>
+								<li>Television<br><span>32'LED SAMSUNG</span></li><br>
+								<li>Balcony<br><span>large balcony with table and 2 chairs</span></li><br>
+							</ul>
+						</div>
+						<div id=shalf>
+							<ul>
+								<li>secure entry system and CCTV</li><br>
+								<li>Linens Provided<br><span>all linens provided</span></li><br>
+								<li>Washing Machine<br><span>electrolux washing machine with dryer</span></li><br>
+								<li>Tumble Dryer<br><span>1 clothes dryer</span></li><br>
+								<li>Dining Area<br><span>large table with 5 chairs and children highchair</span></li><br>
+								<li>Internet<br><span>Wi-Fi access</span></li><br>
+								<li>Wireless Internet</li><br>
+								<li>Free Wifi</li><br>mySlides
+							</ul>
+						</div>
 					</div>
-					<div id=rc>
-						<ul>
-							<li>2 bathroom</li>
-							<li>1 master bedroom</li>
-							<li>1 living room</li>
-						</ul>
-					</div>
-					<!-- Size: 645 sq. ft.				2 bathroom -->
-					<!-- 1 twin en-suite bedroom		1 master bedroom -->
-					<!-- 1 kitchen						1 living room-->
 				</div>
-				<!--transport-->
-				<div id="transport" class ="anchor">
-					<h2>Transport</h2>
-					
-					<p>24/7 bus services nearby</p>
-					<ul>
-						<li>Bus no.35: a few minutes to Scottish Parliament, The Royal Residence at Holyrood Palace, the Royal Mile,National Museum of Scotland, 
-						Old Town and direct from Edinburgh Airport to the apartment, ticket cost £1.60 per person</li>
+				<!--open new column-->
+				<div class=roomsNtransport>
+				<!--rooms-->
+					<div id=rooms class ="anchor">
+						<h2>Rooms</h2>
 						
-						<li>Bus no.1:a few minutes to Princes Street and West End</li>
-						<li>Bus no.26: 20 minutes to Edinburgh Zoo or opposite direction to Portobello Beach(Edinburgh's seaside)</li>
-					</ul>
-					<p>for more information, please visit <a href="https://www.lothianbuses.com/">https://www.lothianbuses.com/</a></p>
-					<p>Taxi is also available:</p>
-					<ul>
-						<li>from the apartment to Edinburgh airport: ~£ 25</li>
-						<li>from apartment to Waverley Train Station,Royal Mile and Princes St.: £7</li>
-					</ul>
-					<p>15-25 minutes walk to Waverley Train Station,Royal Mile and Princes St. </p>
+						<div id=rmc>
+							<ul>
+								<li>Size: 645 sq. ft.</li>
+								<li>1 twin en-suite bedroom</li>
+								<li>1 kitchen</li>
+								<li>2 bathroom</li>
+								<li>1 master bedroom</li>
+								<li>1 living room</li>
+							</ul>
+						</div>
+						<!-- Size: 645 sq. ft.				2 bathroom -->
+						<!-- 1 twin en-suite bedroom		1 master bedroom -->
+						<!-- 1 kitchen						1 living room-->
+					</div>
+					<!--transport-->
+					<div id="transport" class ="anchor">
+						<h2>Transport</h2>
+						
+						<p>24/7 bus services nearby</p>
+						<ul>
+							<li>Bus no.35: a few minutes to Scottish Parliament, The Royal Residence at Holyrood Palace, the Royal Mile,National Museum of Scotland, 
+							Old Town and direct from Edinburgh Airport to the apartment, ticket cost £1.60 per person</li>
+							
+							<li>Bus no.1:a few minutes to Princes Street and West End</li>
+							<li>Bus no.26: 20 minutes to Edinburgh Zoo or opposite direction to Portobello Beach(Edinburgh's seaside)</li>
+						</ul>
+						<p>for more information, please visit <a href="https://www.lothianbuses.com/">https://www.lothianbuses.com/</a></p>
+						<p>Taxi is also available:</p>
+						<ul>
+							<li>from the apartment to Edinburgh airport: ~£ 25</li>
+							<li>from apartment to Waverley Train Station,Royal Mile and Princes St.: £7</li>
+						</ul>
+						<p>15-25 minutes walk to Waverley Train Station,Royal Mile and Princes St. </p>
+					</div>
 				</div>
 			</div>
 			<!--go down,display other details-->
-			<div id=details>
+			<div id=details class ="anchor">
 				<h2>Other details</h2>
 				
 				<p>check-in time: after 14:00<br>
@@ -176,7 +210,7 @@
 				</p>
 			</div>
 			<!--owner--><!--with contact owner button-->
-			<div id=owner>
+			<div id=owner class ="anchor">
 				<h2>Owner</h2>        <button type="button" id=contOwner>Contact owner</button>
 				
 				<h4>Henry Wade</h4>
@@ -184,7 +218,7 @@
 				If you have any question, feel free to ask me anytime! :)</p>
 			</div>
 			<!--reviews-->
-			<div id=reviews>
+			<div id=reviews class ="anchor">
 				<h2>Reviews</h2>
 				
 				<!-- name ----------------------------------------------------------------------------------------------- -->
