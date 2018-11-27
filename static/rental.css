@@ -232,7 +232,12 @@ span{
 	margin-left:60px;
 }
 /* rental page css */
-	#tableBox{margin-left:4%}
+#tableBox{
+margin-left:4%
+}
+#states:nth-child(1){
+	float:left
+}
 /* botton design */
 .button {
     
