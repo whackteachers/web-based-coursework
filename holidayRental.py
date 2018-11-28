@@ -62,8 +62,8 @@ def addDetails():
     checkOutTime=[row[1]for row in detailList]
     confirmation=[row[7]for row in detailList]
     #calculate the total price  
-    d1 = datetime.strptime(CheckIn, "%d/%m/%Y")
-    d2 = datetime.strptime(CheckOut, "%d/%m/%Y")
+    d1 = datetime.strptime(checkIn, "%d/%m/%Y")
+    d2 = datetime.strptime(checkOut, "%d/%m/%Y")
     totalPrice=(abs((d2 - d1).days))*71
     return render_template('request.html',checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation,totalPrice=totalPrice)
 
