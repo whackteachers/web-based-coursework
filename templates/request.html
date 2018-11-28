@@ -4,9 +4,18 @@
 		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
         <title>Requst for a rental</title> 
 	    <link rel="stylesheet" href="../static/rental.css" type="text/css" />
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../static/datepicker.js"></script>
+
 	</head>
 	<body>
 		<div class="navBar">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/attractions">Attractions</a></li>
+			</ul>
 		</div>
 		
 		
@@ -21,8 +30,16 @@
 				<table cellpadding=10 width=400>
 				<tr>
 				<!-- set time for check in and out  -->	
-					<td>Check in<input type="date" name="checkIn" value="dd-mm-yyyy"> </td>
-					<td>Check out<input type="date" name="checkOut" value="dd-mm-yyyy"></td>
+                
+                
+					<td>
+                        <label for="from" >Check In</label>
+                        <input type="text" id="from" name="checkIn" value="dd-mm-yyyy">
+                    </td>
+					<td>
+                        <label for="to">Check out</label>
+                        <input type="text" id="to" name="checkOut" value="dd-mm-yyyy">
+                    </td>
 				</tr>
 			<!-- input title and name	 -->
 				<tr>
@@ -72,40 +89,54 @@
 				
 			</form>
 			</div>
-            <table>
-        {% for line in checkInTime%}
-            <tr>
-               {% for items in line%}
-                <td>
-                    {{items}}
-                </td>
-                {% endfor%}
-            </tr>
-         {%endfor%}
-         
-      </table>
-      <table>
-      {% for line in checkOutTime%}
-            <tr>
-               {% for items in line%}
-                <td>
-                    {{items}}
-                </td>
-                {% endfor%}
-            </tr>
-         {%endfor%}
-      </table>
-      <table>
-      {% for line in confirmation%}
-            <tr>
-               {% for items in line%}
-                <td>
-                    {{items}}
-                </td>
-                {% endfor%}
-            </tr>
-         {%endfor%}
-      </table>
 		</div>
+		
+		<div id="states" class="main2">
+			<div class="displayStates">
+				<p>check in</p>
+            <table>
+				{% for line in checkInTime%}
+				<tr>
+					{% for items in line%}
+					<td>
+						{{items}}
+					</td>
+					{% endfor%}
+				</tr>
+				{%endfor%}
+				
+			</table>
+			</div>
+			
+			<div class="displayStates">
+			<p>check out</p>
+			<table>
+				{% for line in checkOutTime%}
+				<tr>
+					{% for items in line%}
+						<td>
+							{{items}}
+						</td>
+					{% endfor%}
+				</tr>
+				{%endfor%}
+			</table>
+			</div>
+			
+			<div class="displayStates">
+			<p>confirmation</p>
+			<table>
+				{% for line in confirmation%}
+				<tr>
+					{% for items in line%}
+					<td>
+						{{items}}
+					</td>
+					{% endfor%}
+				</tr>
+				{%endfor%}
+			</table>
+			</div>
+			</div>
 	</body>
 </html>

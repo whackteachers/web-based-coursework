@@ -1,6 +1,10 @@
 import csv
+import ctypes
 from flask import Flask, render_template
 from flask import request
+from ctypes import *
+from datetime import datetime
+
 app = Flask(__name__)
 @app.route('/')
 def home(): 
@@ -14,16 +18,16 @@ def readFile(aFile):
          detailList = [row for row in reader]
     return detailList
 	
-	
 def writeFile(aList,aFile):
      with open(aFile, 'w', newline='') as outFile: 
         write=csv.writer(outFile)
         write.writerows(aList)
      return	
 	 
-	@app.route('/rentalDetail', methods = ['GET'])
-
-	def rentalDetail():
+	 
+#turn to rental page and display rental details
+@app.route('/rentalDetail', methods = ['GET'])
+def rentalDetail():
     requestFile='static\\requestDetail.csv'
     detailList= readFile(requestFile)
     checkInTime=[row[0]for row in detailList]
@@ -31,6 +35,10 @@ def writeFile(aList,aFile):
     confirmation=[row[7]for row in detailList]
     return render_template('request.html', checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation)
     
+@app.route('/attractions', methods = ['GET'])
+def attractions():
+	return render_template('attractions.html')
+	
 @app.route('/addDetails', methods= ['POST','GET'])
 def addDetails():
     checkIn=request.form[('checkIn')]
@@ -53,7 +61,16 @@ def addDetails():
     checkInTime=[row[0]for row in detailList]
     checkOutTime=[row[1]for row in detailList]
     confirmation=[row[7]for row in detailList]
-    return render_template('request.html',checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation)
+    #calculate the total price  
+    d1 = datetime.strptime(CheckIn, "%d/%m/%Y")
+    d2 = datetime.strptime(CheckOut, "%d/%m/%Y")
+    totalPrice=(abs((d2 - d1).days))*71
+    return render_template('request.html',checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation,totalPrice=totalPrice)
+
+
+    
+    
+    
 	
 if __name__ == '__main__':
  app.run(debug = True)
