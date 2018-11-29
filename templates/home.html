@@ -3,7 +3,9 @@
 		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
 		<title>Property homepage</title> 
 	    <link rel="stylesheet" href="../static/rental.css" type="text/css" />
+		<link rel="stylesheet" href="../static/starRating.css" type="text/css" />
 		<script type="text/javascript" src="../static/gallery.js"></script>
+		<script src="../static/starRating.js"></script>
 	</head>
 
 	<body>
@@ -220,6 +222,53 @@
 			<!--reviews-->
 			<div id=reviews class ="anchor">
 				<h2>Reviews</h2>
+				<form action="addReviews"  method= "post">
+					
+					Name:
+					<input id="namebox" type="text" name="reviewerName" maxlength="32" size="20" placeholder="Your name" >
+					<!-- Star rating -->
+					&#9; Rating:
+					<div class="rating">
+					
+					 <label>
+						<input type="radio" name="stars" value="1" />
+						<span class="icon">★</span>
+					</label>
+					<label>
+						<input type="radio" name="stars" value="2" />
+						<span class="icon">★</span>
+						<span class="icon">★</span>
+					</label>
+					<label>
+						<input type="radio" name="stars" value="3" />
+						<span class="icon">★</span>
+						<span class="icon">★</span>
+						<span class="icon">★</span>   
+					</label>
+					<label>
+						<input type="radio" name="stars" value="4" />
+						<span class="icon">★</span>
+						<span class="icon">★</span>
+						<span class="icon">★</span>
+						<span class="icon">★</span>
+					</label>
+					<label>
+					<input type="radio" name="stars" value="5" />
+						<span class="icon">★</span>
+						<span class="icon">★</span>
+						<span class="icon">★</span>
+						<span class="icon">★</span>
+						<span class="icon">★</span>
+					</label>
+					</div>
+					<br>
+					<br>
+					Your comments<br>
+					<textarea id="reviewBox" rows="6" type="text" name="review" placeholder="Your comments"></textarea><br>
+					
+					<button class="button button1" type="submit" value="submit">Submit</button>
+					
+				</form>
 				
 				<!-- name ----------------------------------------------------------------------------------------------- -->
 				<!-- name  \   <Title> *****                                                                             | -->

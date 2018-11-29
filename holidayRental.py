@@ -8,7 +8,9 @@ from datetime import datetime
 app = Flask(__name__)
 @app.route('/')
 def home(): 
-    return render_template('home.html')
+	reviewFile='static\\reviews.csv'
+	detailList= readFile(reviewFile)
+    return render_template('home.html',detailList=detailList)
 
 #Set file reading and writing function	
 
@@ -19,10 +21,10 @@ def readFile(aFile):
     return detailList
 	
 def writeFile(aList,aFile):
-     with open(aFile, 'w', newline='') as outFile: 
+    with open(aFile, 'w', newline='') as outFile: 
         write=csv.writer(outFile)
         write.writerows(aList)
-     return	
+    return	
 	 
 	 
 #turn to rental page and display rental details
@@ -50,12 +52,15 @@ def addDetails():
     email=request.form[('email')]
     confirmation='unconfirmed'
     newDetail=[checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email,confirmation]	
+    
     fileName='static\\requestDetail.csv'
     detailList=readFile(fileName)
     detailList.append(newDetail)
     writeFile(detailList,fileName)
+    
     MessageBox = ctypes.windll.user32.MessageBoxW
     MessageBox(None, 'Your request has been sent to the admin, please check your email later!', 'Nearly finish', 0)
+    
     requestFile='static\\requestDetail.csv'
     detailList= readFile(requestFile)
     checkInTime=[row[0]for row in detailList]
@@ -67,9 +72,23 @@ def addDetails():
     totalPrice=(abs((d2 - d1).days))*71
     return render_template('request.html',checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation,totalPrice=totalPrice)
 
-
-    
-    
+@app.route('/addReviews', methods= ['POST','GET'])
+def addReviews():
+	reviewerName=request.form[('reviewerName')]
+	review=request.form[('review')]
+	star=request.form[('star')]
+	currentTime=strftime("%d/%m/%y %H:%M:%S", gmtime())
+	newReview=[reviewerName,star,review,currentTime]
+	
+	fileName='static\\reviews.csv'
+	detailList=readFile(fileName)
+	detailList.append(newReview)
+	writeFile(detailList,fileName)
+	
+	reviewFile='static\\reviews.csv'
+	detailList= readFile(reviewFile)
+	
+	return render_template('home.html',detailList=detailList)
     
 	
 if __name__ == '__main__':
