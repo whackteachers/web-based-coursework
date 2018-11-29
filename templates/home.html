@@ -222,7 +222,7 @@
 			<!--reviews-->
 			<div id=reviews class ="anchor">
 				<h2>Reviews</h2>
-				<form action="addReviews"  method= "post">
+				<form action="addReviews"  method= "post" id="userReview">
 					
 					Name:
 					<input id="namebox" type="text" name="reviewerName" maxlength="32" size="20" placeholder="Your name" >
@@ -264,12 +264,25 @@
 					<br>
 					<br>
 					Your comments<br>
-					<textarea id="reviewBox" rows="6" type="text" name="review" placeholder="Your comments"></textarea><br>
+					<textarea id="reviewBox" rows="6" form="userReview" name="review" placeholder="Your comments"></textarea><br>
 					
 					<button class="button button1" type="submit" value="submit">Submit</button>
 					
 				</form>
 				
+				<table>
+				{% for line in detailList%}
+				<tr>
+					{% for items in line%}
+					<td>
+						{{items}}
+					</td>
+					{% endfor%}
+				</tr>
+				{%endfor%}
+				
+			</table>
+					
 				<!-- name ----------------------------------------------------------------------------------------------- -->
 				<!-- name  \   <Title> *****                                                                             | -->
 				<!-- 		|   <review>                                                                                 |-->
