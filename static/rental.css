@@ -7,7 +7,7 @@ body{
 }
 /*guide bar on the top*/
 .navBar {
-	height:75px;
+	height: 75px;
 	width:100%;
 	background-color:#0A2861;
 	position:fixed;
@@ -20,6 +20,12 @@ body{
 	margin: 0;
 	font-family:Arial;
 	z-index: 999999;
+}
+.navBar ul{
+	position: absolute;
+    left: 62px;
+    width: 60%;
+    display: inline-block;
 }
 .navBar li{
 	display: inline-block;
@@ -35,6 +41,11 @@ body{
 	text-decoration: none;
 	color: inherit;
 	padding: 20px;
+}
+.navBar button{
+	position: absolute;
+    right: 20%;
+    margin-top: 10px;
 }
 @media screen and (max-width: 640px){
 	ul li{
@@ -52,6 +63,9 @@ body{
 	text-align:left;
 	grid-area: address;
 	width:500px;
+}
+#address{
+	width:300px;
 }
 .anchor{
 	margin-top: -75px;
@@ -204,12 +218,12 @@ span{
 	width:15.5vw;
 }
 .addMap{
-	text-align:right;
+	text-align: left;
 	right: 10%;
 	margin: 0;
 	border:none;
-	height:50vh;
-	width:50vw;
+	height: 20%;
+	width: 80%;
 	overflow:hidden;
 	background:none!important;
 }
@@ -270,9 +284,10 @@ margin-left:4%
 
 /* Position the image container (needed to position the left and right arrows) */
 .gallery {
-	width: 500px;
-  position: relative;
-  grid-area: gallery;
+	width: 70%;
+	height: 80%;
+	position: relative;
+	grid-area: gallery;
 }
 
 /* Hide the images by default */
@@ -323,14 +338,6 @@ margin-left:4%
   top: 0;
 }
 
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
 .row:after {
   content: "";
   display: table;
@@ -340,7 +347,7 @@ margin-left:4%
 /* Six columns side by side */
 .column {
   float: left;
-  width: 16.66%;
+  width: 10%;
 }
 
 /* Add a transparency effect for thumnbail images */
