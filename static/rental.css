@@ -359,3 +359,9 @@ margin-left:4%
 .demo:hover {
   opacity: 1;
 }
+
+/* review box */
+#reviewBox{
+	width: 40%;
+}
+
