@@ -6,11 +6,25 @@ from ctypes import *
 from datetime import datetime
 
 app = Flask(__name__)
+
+enterTime = datetime.now().month
+rates = [1.25,1.15,1.3,0.9]
+price = 71
+if (enterTime in (12,1)):
+	applyRates = rates[0]
+elif (enterTime in (3,4)):
+	applyRates = rates[1]
+elif (enterTime in (7,8)):
+	applyRates = rates[2]
+elif (enterTime in (9,10,11)):
+	applyRates = rates[3]
+priceAfter = round(71* applyRates,2)
+
 @app.route('/')
 def home(): 
 	reviewFile='static\\reviews.csv'
 	detailList= readFile(reviewFile)
-    return render_template('home.html',detailList=detailList)
+	return render_template('home.html',detailList=detailList,displayPrice=priceAfter)
 
 #Set file reading and writing function	
 
@@ -66,7 +80,7 @@ def addDetails():
     checkInTime=[row[0]for row in detailList]
     checkOutTime=[row[1]for row in detailList]
     confirmation=[row[7]for row in detailList]
-    #calculate the total price  
+    #calculate the total price
     d1 = datetime.strptime(checkIn, "%d/%m/%Y")
     d2 = datetime.strptime(checkOut, "%d/%m/%Y")
     totalPrice=(abs((d2 - d1).days))*71
