@@ -81,18 +81,18 @@ def addDetails():
     checkOutTime=[row[1]for row in detailList]
     confirmation=[row[7]for row in detailList]
     #calculate the total price
-    d1 = datetime.strptime(checkIn, "%d/%m/%Y")
-    d2 = datetime.strptime(checkOut, "%d/%m/%Y")
-    totalPrice=(abs((d2 - d1).days))*71
+    d1 = datetime(checkIn, "%d/%m/%Y")
+    d2 = datetime(checkOut, "%d/%m/%Y")
+    totalPrice=(abs((d2 - d1).days))*priceAfter
     return render_template('request.html',checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation,totalPrice=totalPrice)
 
 @app.route('/addReviews', methods= ['POST','GET'])
 def addReviews():
 	reviewerName=request.form[('reviewerName')]
 	review=request.form[('review')]
-	star=request.form[('star')]
+	stars=request.form[('stars')]
 	currentTime=strftime("%d/%m/%y %H:%M:%S", gmtime())
-	newReview=[reviewerName,star,review,currentTime]
+	newReview=[reviewerName,stars,review,currentTime]
 	
 	fileName='static\\reviews.csv'
 	detailList=readFile(fileName)

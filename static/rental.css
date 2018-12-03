@@ -21,6 +21,7 @@ body{
 	font-family:Arial;
 	z-index: 999999;
 }
+
 .navBar ul{
 	position: absolute;
 	left: 2.5%;
@@ -249,7 +250,8 @@ span{
 }
 /* rental page css */
 #tableBox{
-margin-left:4%
+margin-left:4%;
+float:left;
 }
 #states:nth-child(1){
 	float:left
