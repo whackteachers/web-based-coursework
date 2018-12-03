@@ -7,7 +7,7 @@ body{
 }
 /*guide bar on the top*/
 .navBar {
-	height: 75px;
+	height: 19vh;
 	width:100%;
 	background-color:#0A2861;
 	position:fixed;
@@ -170,16 +170,6 @@ span{
 	margin-right:5%;
 	height:75vh;
 }
-textarea{
-	border: none;
-	border-radius:10px;
-	padding: 5px;
-}
-input{
-	border: none;
-	border-radius:7px;
-	padding: 5px;
-}
 .attitle {
 	margin-top:3vh;
 	background-color:#99CCFF;
@@ -260,6 +250,7 @@ input{
 }
 /* rental page css */
 #tableBox{
+<<<<<<< HEAD
 	display: inline-table;
 	
 	width: 50%;
@@ -274,12 +265,17 @@ input{
 	height: 65%;
 	border-radius: 30px;
 	background-color: #FFFFFF;
+=======
+margin-left:4%;
+float:left;
+>>>>>>> parent of b5ed54c... Merge branch 'side' of https://github.com/whackteachers/web-based-coursework into side
 }
 #states:nth-child(1){
 	float:left
 }
 /* botton design */
 .button {
+    
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -329,7 +325,7 @@ input{
 .next {
   cursor: pointer;
   position: absolute;
-  top: 55%;
+  top: 40%;
   width: auto;
   padding: 16px;
   margin-top: -50px;

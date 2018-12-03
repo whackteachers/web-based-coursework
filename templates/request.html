@@ -6,8 +6,8 @@
 	    <link rel="stylesheet" href="../static/rental.css" type="text/css" />
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="../static/datepicker.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../static/datepicker.js"></script>
 
 	</head>
 	<body>
@@ -24,77 +24,70 @@
 				<h1>Request details</h1>
 			
 			
-			<div id="tableBox">
-				<form action="addDetails" method= "post" >
-					<table cellpadding=10 width=400>
-						<tr>
-						<!-- set time for check in and out  -->	
-							<td>
-								<label for="from" >Check In</label>
-								<input type="text" id="from" name="checkIn" placeholder="dd/mm/yyyy">
-							</td>
-							
-							<td>
-								<label for="to">Check out</label>
-								<input type="text" id="to" name="checkOut" placeholder="dd/mm/yyyy">
-							</td>
-						</tr>
-						<!-- input title and name	 -->
-						<tr>
-							<td>Title<input list="title" name="title">
-								 <datalist id="title">
-									<option value="Mr">
-									<option value="Mrs">
-									<option value="Miss">
-									<option value="Ms">
-								</datalist>
-							</td>
-							
-							<td>Name<input type="text" name="firstName">
-							</td>
-						</tr>
-						<!-- set numbers of guests -->
-						<tr>
-							<td>Adult(s)<input list="adultsNumbers" name="adultsNumbers">
-							  <datalist id="adultsNumbers">
-								<option value="1">
-								<option value="2">
-								<option value="3">
-								<option value="4">
-							  </datalist>
-							</td>
-							
-							<td>Child(ren)<input list="childrenNumbers" name="childrenNumbers">
-							 <datalist id="childrenNumbers" >
-								<option value="0">
-								<option value="1">
-								<option value="2">
-							</datalist>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>
-								<!-- input contact email-->
-								E-mail<input type="email" name="email" placeholder="example@example.com">
-								<br><br>
-							</td>
-							
-							<td>
-								<!-- input contact email-->
-								Phone Number(include country code)<input type="phoneNo" name="phoneNo" placeholder="+44123456789">
-								<br><br>
-							</td>
-						</tr>
-						<!-- submit button	 -->
-						<tr>
-							<td>
-								<button class="button button1" type="submit" value="submit">Submit</button>
-							</td>
-						</tr>
-					</table>
-					
-				</form>
+			
+			<div class="tableBox">
+			<form action="addDetails" method= "post" >
+				<table cellpadding=10 width=400>
+				<tr>
+				<!-- set time for check in and out  -->	
+                
+                
+					<td>
+                        <label for="from" >Check In</label>
+                        <input type="text" id="from" name="checkIn" placeholder="dd/mm/yyyy">
+                    </td>
+					<td>
+                        <label for="to">Check out</label>
+                        <input type="text" id="to" name="checkOut" placeholder="dd/mm/yyyy">
+                    </td>
+				</tr>
+			<!-- input title and name	 -->
+				<tr>
+					<td>Title<input list="title" name="title">
+					 <datalist id="title">
+						<option value="Mr">
+						<option value="Mrs">
+						<option value="Miss">
+						<option value="Ms">
+					</datalist>
+					</td>
+					<td>Name<input type="text" name="firstName">
+					</td>
+				</tr>
+			<!-- set numbers of guests -->
+				<tr>
+					<td>Adult(s)<input list="adultsNumbers" name="adultsNumbers">
+					  <datalist id="adultsNumbers">
+						<option value="1">
+						<option value="2">
+						<option value="3">
+					 	<option value="4">
+					  </datalist>
+					</td>
+					<td>Child(ren)<input list="childrenNumbers" name="childrenNumbers">
+					 <datalist id="childrenNumbers" >
+						<option value="0">
+						<option value="1">
+						<option value="2">
+					</datalist>
+					</td>
+				</tr>
+				<tr>
+				<td>
+			<!-- input contact email		 -->
+				E-mail<input type="email" name="email" placeholder="example@example.com">
+				<br><br>
+				</td>
+				</tr>
+			<!-- submit button	 -->
+				<tr>
+					<td>
+						<button class="button button1" type="submit" value="submit">Submit</button>
+					</td>
+				</tr>
+			  </table>
+				
+			</form>
 			</div>
 			
 			
@@ -103,11 +96,6 @@
 			
 			</div>
 			
-		</div>
-		
-		<div class="calculator">
-			<p>price/night: £71</p>
-			<p>Total Price: £140</p>
 		</div>
 		
 		<div id="states" class="main2">
