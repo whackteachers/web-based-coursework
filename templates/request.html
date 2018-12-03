@@ -20,86 +20,92 @@
 		
 		
 		<div class="main" >
-			
-<<<<<<< HEAD
+
 				<h1>Request details</h1>
-			
-			
-=======
->>>>>>> parent of b5ed54c... Merge branch 'side' of https://github.com/whackteachers/web-based-coursework into side
-			
+
 			<div class="tableBox">
-			<form action="addDetails" method= "post" >
-				<table cellpadding=10 width=400>
-				<tr>
-				<!-- set time for check in and out  -->	
-                
-                
-					<td>
-                        <label for="from" >Check In</label>
-                        <input type="text" id="from" name="checkIn" placeholder="dd/mm/yyyy">
-                    </td>
-					<td>
-                        <label for="to">Check out</label>
-                        <input type="text" id="to" name="checkOut" placeholder="dd/mm/yyyy">
-                    </td>
-				</tr>
-			<!-- input title and name	 -->
-				<tr>
-					<td>Title<input list="title" name="title">
-					 <datalist id="title">
-						<option value="Mr">
-						<option value="Mrs">
-						<option value="Miss">
-						<option value="Ms">
-					</datalist>
-					</td>
-					<td>Name<input type="text" name="firstName">
-					</td>
-				</tr>
-			<!-- set numbers of guests -->
-				<tr>
-					<td>Adult(s)<input list="adultsNumbers" name="adultsNumbers">
-					  <datalist id="adultsNumbers">
-						<option value="1">
-						<option value="2">
-						<option value="3">
-					 	<option value="4">
-					  </datalist>
-					</td>
-					<td>Child(ren)<input list="childrenNumbers" name="childrenNumbers">
-					 <datalist id="childrenNumbers" >
-						<option value="0">
-						<option value="1">
-						<option value="2">
-					</datalist>
-					</td>
-				</tr>
-				<tr>
-				<td>
-			<!-- input contact email		 -->
-				E-mail<input type="email" name="email" placeholder="example@example.com">
-				<br><br>
-				</td>
-				</tr>
-			<!-- submit button	 -->
-				<tr>
-					<td>
-						<button class="button button1" type="submit" value="submit">Submit</button>
-					</td>
-				</tr>
-			  </table>
-				
-			</form>
+						</form>
+				<form action="addDetails" method= "post" >
+					<table cellpadding=10 width=400>
+						<tr>
+						<!-- set time for check in and out  -->	
+							<td>
+								<label for="from" >Check In</label>
+								<input type="text" id="from" name="checkIn" placeholder="dd/mm/yyyy">
+							</td>
+							
+							<td>
+								<label for="to">Check out</label>
+								<input type="text" id="to" name="checkOut" placeholder="dd/mm/yyyy">
+							</td>
+						</tr>
+						<!-- input title and name	 -->
+						<tr>
+							<td>Title<input list="title" name="title">
+								 <datalist id="title">
+									<option value="Mr">
+									<option value="Mrs">
+									<option value="Miss">
+									<option value="Ms">
+								</datalist>
+							</td>
+							
+							<td>Name<input type="text" name="firstName">
+							</td>
+						</tr>
+						<!-- set numbers of guests -->
+						<tr>
+							<td>Adult(s)<input list="adultsNumbers" name="adultsNumbers">
+							  <datalist id="adultsNumbers">
+								<option value="1">
+								<option value="2">
+								<option value="3">
+								<option value="4">
+							  </datalist>
+							</td>
+							
+							<td>Child(ren)<input list="childrenNumbers" name="childrenNumbers">
+							 <datalist id="childrenNumbers" >
+								<option value="0">
+								<option value="1">
+								<option value="2">
+							</datalist>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<!-- input contact email-->
+								E-mail<input type="email" name="email" placeholder="example@example.com">
+								<br><br>
+							</td>
+							
+							<td>
+								<!-- input contact email-->
+								Phone Number(include country code)<input type="phoneNo" name="phoneNo" placeholder="+44123456789">
+								<br><br>
+							</td>
+						</tr>
+						<!-- submit button	 -->
+						<tr>
+							<td>
+								<button class="button button1" type="submit" value="submit">Submit</button>
+							</td>
+						</tr>
+					</table>
+					
+				</form>
 			</div>
-			
-			
-			<div class="tableBox">
-			
-			
-			</div>
-			
 		</div>
+		
+		<div class="calculator">
+			<p>price/night: £71</p>
+			<p>Total Price: £140</p>
+		</div>
+			
+			
+			
+		
 		
 		<div id="states" class="main2">
 			<div class="displayStates">

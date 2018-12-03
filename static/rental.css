@@ -7,7 +7,7 @@ body{
 }
 /*guide bar on the top*/
 .navBar {
-	height: 19vh;
+	height: 75px;
 	width:100%;
 	background-color:#0A2861;
 	position:fixed;
@@ -170,6 +170,16 @@ span{
 	margin-right:5%;
 	height:75vh;
 }
+textarea{
+	border: none;
+	border-radius:10px;
+	padding: 5px;
+}
+input{
+	border: none;
+	border-radius:7px;
+	padding: 5px;
+}
 .attitle {
 	margin-top:3vh;
 	background-color:#99CCFF;
@@ -250,10 +260,8 @@ span{
 }
 /* rental page css */
 #tableBox{
-<<<<<<< HEAD
-<<<<<<< HEAD
 	display: inline-table;
-	
+	margin-left:4%;
 	width: 50%;
 }
 .calculator{
@@ -266,15 +274,7 @@ span{
 	height: 65%;
 	border-radius: 30px;
 	background-color: #FFFFFF;
-=======
-margin-left:4%;
-float:left;
->>>>>>> parent of b5ed54c... Merge branch 'side' of https://github.com/whackteachers/web-based-coursework into side
-=======
-margin-left:4%;
-float:left;
->>>>>>> parent of b5ed54c... Merge branch 'side' of https://github.com/whackteachers/web-based-coursework into side
-}
+	}
 #states:nth-child(1){
 	float:left
 }
@@ -330,7 +330,7 @@ float:left;
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 55%;
   width: auto;
   padding: 16px;
   margin-top: -50px;
