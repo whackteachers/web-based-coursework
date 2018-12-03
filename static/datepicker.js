@@ -1,8 +1,8 @@
- $( function() {
+$( function() {
     var dateFormat = "dd/mm/yy",
       from = $( "#from" )
         .datepicker({
-			minDate:0,
+		 minDate:0,
           defaultDate: "+1w",
           changeMonth: true,
           numberOfMonths: 1
@@ -12,7 +12,7 @@
         }),
       to = $( "#to" ).datepicker({
 		minDate:0,
-		defaultDate: "+1w",
+        defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 1
       })
