@@ -16,8 +16,8 @@
 			{%endfor%}
 		</script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="../static/datepicker.js"></script>
+  <script src="../static/jquery-ui.js"></script>
+  <script src="../static/datepicker.js"></script>
 
 	</head>
 	<body>
@@ -30,11 +30,11 @@
 		
 		
 		<div class="main" >
-			<div class="title">
-				<p>Request details</p>
-			</div>
-			
-			<div id="tableBox">
+
+				<h1>Request details</h1>
+
+			<div class="tableBox">
+						</form>
 				<form action="addDetails" method= "post" >
 					<table cellpadding=10 width=400>
 						<tr>
@@ -106,13 +106,6 @@
 					
 				</form>
 			</div>
-			
-			
-			<div class="tableBox">
-			
-			<h2> The total price is {{totalPrice}}</h2>
-			</div>
-			
 		</div>
 		
 		<div class="calculator">
@@ -121,6 +114,10 @@
 			<hr>
 			<p>Total Price: <span id="cal">£{{price*2}}</span></p>
 		</div>
+			
+			
+			
+		
 		
 		<div id="states" class="main2">
 			<div class="displayStates">
