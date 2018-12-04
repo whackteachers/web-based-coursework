@@ -37,7 +37,7 @@
 			<h1>Request details</h1>
 
 			<div class="tableBox">
-				<form action="addDetails" method= "post" >
+				<form action="addDetails" method= "post" autocomplete="off" >
 					<table cellpadding=10 width=400>
 					<!-- set time for check in and out  -->
 						<tr>
@@ -123,9 +123,9 @@
 		
 		<div id="states" class="main2">
 			<div class="displayStates">
-				<p>check in</p>
+			
             <table>
-				{% for line in checkInTime%}
+				{% for line in simList%}
 				<tr>
 					{% for items in line%}
 					<td>
@@ -138,36 +138,7 @@
 			</table>
 			</div>
 			
-			<div class="displayStates">
-			<p>check out</p>
-			<table>
-				{% for line in checkOutTime%}
-				<tr>
-					{% for items in line%}
-					<td>
-						{{items}}
-					</td>
-					{% endfor%}
-				</tr>
-				{%endfor%}
-				
-			</table>
-			</div>
 			
-			<div class="displayStates">
-			<p>confirmation</p>
-			<table>
-				{% for line in confirmation%}
-				<tr>
-					{% for items in line%}
-					<td>
-						{{items}}
-					</td>
-					{% endfor%}
-				</tr>
-				{%endfor%}
-				
-			</table>
 			</div>
 			</div>
 	</body>
