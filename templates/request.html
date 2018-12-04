@@ -121,17 +121,16 @@
 		<div id="states" class="main2">
 			<div class="displayStates">
 			
-            <table>
-				{% for line in simList%}
-				<tr>
-					{% for items in line%}
-					<td>
-						{{items}}
-					</td>
+				<table>
+					{% for line in simList%}
+					<tr>
+						{% for items in line%}
+						<td>
+							{{items}}
+						</td>
 					{% endfor%}
-				</tr>
+					</tr>
 				{%endfor%}
-				
 			</table>
 			</div>
 			
