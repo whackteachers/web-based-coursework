@@ -5,6 +5,16 @@
         <title>Requst for a rental</title> 
 	    <link rel="stylesheet" href="../static/rental.css" type="text/css" />
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script>
+			bookedDates = [];
+			{% for line in checkInTime%}
+					bookedDates.push({{line}});
+			{%endfor%}
+			outDates = [];
+			{% for line in checkOutTime%}
+					outDates.push({{line}});
+			{%endfor%}
+		</script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="../static/datepicker.js"></script>
@@ -106,8 +116,10 @@
 		</div>
 		
 		<div class="calculator">
-			<p>price/night: £71</p>
-			<p>Total Price: £140</p>
+			<p>Price/night: <span id="cal">£{{price}}</span></p>
+			<p>Duration of stay <span id="cal">2 nights</span><p>
+			<hr>
+			<p>Total Price: <span id="cal">£{{price*2}}</span></p>
 		</div>
 		
 		<div id="states" class="main2">

@@ -115,7 +115,7 @@ body{
 	grid-template-areas:
 		'fhalf shalf'
 }
-span{
+#sText{
 	font-size: small;
 }
 /*main content background*/
@@ -273,10 +273,18 @@ input{
 	width: 32%;
 	height: 65%;
 	border-radius: 30px;
+	-moz-box-shadow: 0px 0px 20px #000000;
+    -webkit-box-shadow: 0px 0px 20px #000000;
+    box-shadow: 0px 0px 10px #000000;
 	background-color: #FFFFFF;
 }
 #states:nth-child(1){
 	float:left
+}
+#cal{
+	float: right;
+	font-size: 20px;
+	margin-top: -3px;
 }
 /* botton design */
 .button {

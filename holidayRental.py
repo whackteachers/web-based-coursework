@@ -49,7 +49,7 @@ def rentalDetail():
     checkInTime=[row[0]for row in detailList]
     checkOutTime=[row[1]for row in detailList]
     confirmation=[row[7]for row in detailList]
-    return render_template('request.html', checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation)
+    return render_template('request.html', checkInTime=checkInTime,checkOutTime=checkOutTime,confirmation=confirmation, price=priceAfter)
     
 @app.route('/attractions', methods = ['GET'])
 def attractions():
