@@ -1,26 +1,43 @@
 $( function() {
-    var dateFormat = "dd/mm/yy",
+	var ukFormat = "dd/mm/yy",
+	tet = [03/12/2018,04/12/2018]
+	
+	//choosing the check in date
       from = $( "#from" )
-        .datepicker({
-		 minDate:0,
-          defaultDate: "+1w",
-          changeMonth: true,
-          numberOfMonths: 1
-        })
-        .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
-        }),
-      to = $( "#to" ).datepicker({
-		minDate:0,
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 1
-      })
-      .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
-      });
+		.datepicker(
+			{
+			defaultDate: "+1w",
+			changeMonth: true,
+			numberOfMonths: 1,
+			minDate: 0,
+			dateFormat: ukFormat,
+			beforeShowDay: function(date){
+				return [ tet.indexOf(string) == -1 ]
+				}
+			}
+		)
+        .on( "change", 
+			function() {
+				to.datepicker( "option", "minDate", getDate( this ) );
+			}
+		),
+	  //choosing the check in date
+      to = $( "#to" )
+	  .datepicker(
+		{
+			defaultDate: "+1w",
+			changeMonth: true,
+			numberOfMonths: 1,
+			dateFormat: ukFormat,
+		}
+	  )
+      .on( "change", function() 
+		{
+			from.datepicker( "option", "maxDate", getDate( this ) );
+		}
+	  );
  
-    function getDate( element ) {
+      function getDate( element ) {
       var date;
       try {
         date = $.datepicker.parseDate( dateFormat, element.value );
@@ -29,5 +46,6 @@ $( function() {
       }
  
       return date;
-    }
-  } );
+	  }
+	} 
+);
