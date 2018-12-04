@@ -1,6 +1,6 @@
 $( function() {
 	var ukFormat = "dd/mm/yy",
-	tet = [03/12/2018,04/12/2018]
+	tet = ["18/12/2018","19/12/2018"]
 	
 	//choosing the check in date
       from = $( "#from" )
@@ -12,7 +12,16 @@ $( function() {
 			minDate: 0,
 			dateFormat: ukFormat,
 			beforeShowDay: function(date){
-				return [ tet.indexOf(string) == -1 ]
+				for (var i = 0; i < tet.length; i++){
+					var s = jQuery.datepicker.formatDate(ukFormat, date);
+					var booked = tet.indexOf(s) == -1 ;
+					if(!booked){
+						return [false , "reserved","booking"]
+					}else{
+						return [true , '']
+					}
+					
+					}
 				}
 			}
 		)

@@ -286,6 +286,10 @@ input{
 	font-size: 20px;
 	margin-top: -3px;
 }
+td.reserved > a{
+	background: #f00 !important;
+    color: #fff !important;
+}
 /* botton design */
 .button {
     
