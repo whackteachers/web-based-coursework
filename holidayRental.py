@@ -65,9 +65,6 @@ def addDetails():
     phoneNo=request.form['phoneNo']
     confirmation='unconfirmed'
     
-    # checkInDate = datetime.strptime(CheckIn, '%d/%m/%Y')
-    # checkOutDate = datetime.strptime(CheckOut, '%d/%m/%Y')
-    
     newDetail=[checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email,phoneNo,confirmation]	
     simDetail=[checkIn,checkOut,confirmation]
     
@@ -86,13 +83,7 @@ def addDetails():
     
     requestFile='static\\simDetail.csv'
     simList= readFile(requestFile)
-    # checkInTime=[row[0]for row in detailList]
-    # checkOutTime=[row[1]for row in detailList]
-    # confirmation=[row[7]for row in detailList]
-    #calculate the total price
-    # d1 = datetime(checkInDate, "%d/%m/%Y")
-    # d2 = datetime(checkOutDate, "%d/%m/%Y")
-    # totalPrice=(abs((d2 - d1).days))*priceAfter
+    
     return render_template('request.html',simList=simList, price=priceAfter)
 
 @app.route('/addReviews', methods= ['POST','GET'])
@@ -101,7 +92,8 @@ def addReviews():
 	review=request.form[('review')]
 	stars=request.form[('stars')]
 	title=request.form[('title')]
-	currentTime=datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+	currentTime=datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+	currentTime+='posted on '
 	newReview=[reviewerName,stars,title,review,currentTime]
 	
 	fileName='static\\reviews.csv'
@@ -114,6 +106,26 @@ def addReviews():
 	
 	return render_template('home.html',detailList=detailList)
     
+@app.route('/adminLogin', methods= ['POST','GET'])
+def adminLogin():
+	username=request.form['username']
+	password=request.form['password']
 	
+	if (username=='admin'and password=='123456'):
+		return render_template('adminPage.html')
+		
+	else:
+		message='Username or password is not correct!Try again'
+		return render_template('loginPage.html',message=message)
+		
+@app.route('/loginPage', methods = ['GET'])
+def loginPage():
+	return render_template('loginPage.html')
+	
+@app.route('/adminPage', methods = ['GET'])
+def adminPage():
+	requestFile='static\\requestDetail.csv'
+	requestList= readFile(requestFile)
+	return render_template('adminPage.html',requestList=requestList)
 if __name__ == '__main__':
  app.run(debug = True)
