@@ -57,87 +57,6 @@ body{
 	}
 }
 
-.mini{
-	position:absolute;
-	top: 100px;
-	right: 10%;
-	text-align:left;
-	grid-area: address;
-	width: 30vw;
-}
-#address{
-	width:300px;
-}
-.anchor{
-	margin-top: -75px;
-	padding-top:75px;
-}
-.price{
-	position:absolute;
-	right: 10%
-}
-.upper_grid{
-	display: inline-grid;
-	grid-column-gap: 15%;
-	grid-row-gap: 50px;
-	grid-template-areas:
-		'gallery address';
-	margin-top: -7px;
-}
-#facilities{
-	grid-area:facilities;
-}
-#rooms{
-	grid-area:rooms;
-}
-#transport{
-	grid-area:transport;
-	grid-row: 1 / span 2;
-}
-.grid{
-	display: inline-grid;
-	grid-column-gap: 15%;
-	grid-row-gap: 50px;
-	grid-template-areas:
-		'facilities rooms'
-		'. transport'
-}
-#fhalf{
-	grid-area:fhalf;
-}
-#shalf{
-	grid-area:shalf;
-}
-.subgrid{
-	display: grid;
-	grid-column-gap: 50px;
-	grid-row-gap: 50px;
-	grid-template-areas:
-		'fhalf shalf'
-}
-#sText{
-	font-size: small;
-}
-#reviewTitle{
-	display: inline;
-}
-#reviewTime{
-	color: gray;
-	margin-left: 40px;
-}
-.reviewList{
-	margin:10px;
-	padding: 20px;
-	width: 80%;
-	border-radius: 30px;
-	-moz-box-shadow: 0px 0px 20px #000000;
-    -webkit-box-shadow: 0px 0px 20px #000000;
-    box-shadow: 0px 0px 10px #000000;
-	background-color: #FFFFFF;
-}
-#reviewText{
-	line-height: 35px;
-}
 /*main content background*/
 .main {
 	background-color:#99CCFF;
@@ -154,34 +73,7 @@ body{
 	color:#FFFFFF;
 	font-size:5em;
 }
-/*attractions css*/
-.attractions {
-	font-family:Arial,Helvitica,sans-self;
-	width:36vw;
-	height:62vh;
-	background-color:#FFFFFF;
-	float:left;
-	margin-left:60px;
-}
-.atdiv{
-	float:left;
-	width:17vw;
-	padding-left:10px;
-	padding-bottom:10px;
-}
-.pic {
-	padding-left:10px;
-	padding-top:20px;
-}
-.text {
-	float:left;
-	width:17vw;
-	padding-left:10px;
-	padding-bottom:10px;
-}
-.clearFix{
-	clear: both;
-}
+
 .main2 {
 	background-color:#99CCFF;
 	padding:2em;
@@ -199,26 +91,9 @@ input{
 	border-radius:7px;
 	padding: 5px;
 }
-.attitle {
-	margin-top:3vh;
-	background-color:#99CCFF;
-	padding:2em;
-	margin-left:5%;
-	margin-right:5%;
-	height:35vh;
-}
 
-.roomsNtransport {
-	width: vw;
-	list-style-type: none;
-}
 
-.rmc{
-	margin-left: 10em;
-	columns: 2;
-	-webkit-columns: 2;
-	-moz-columns: 2;
-}
+
 /*attributes to big map for attractions*/
 #bigMap {
 	padding-left:3%;
@@ -234,13 +109,7 @@ input{
 	height:65vh;
 	border:none;
 }
-.attractions2 {
-	font-family:Arial,Helvitica,sans-self;
-	width:36vw;
-	height:58vh;
-	float:left;
-	margin-left:60px;
-}
+
 
 /*attributes to small map for attractions and size for pictures*/
 .mapouter{
@@ -270,45 +139,8 @@ input{
 	width:15.5vw; 
 	height:24.5vh;
 }
-.attractions2 {
-	font-family:Arial,Helvitica,sans-self;
-	width:36vw;
-	height:58vh;
-	float:left;
-	margin-left:60px;
-}
-/* rental page css */
-#tableBox{
-	display: inline-table;
-	margin-left:4%;
-	width: 50%;
-}
-.calculator{
-	margin:0;
-	padding: 20px;
-	position: absolute;
-	top: 30%;
-	right: 15%;
-	width: 32%;
-	height: 65%;
-	border-radius: 30px;
-	-moz-box-shadow: 0px 0px 20px #000000;
-    -webkit-box-shadow: 0px 0px 20px #000000;
-    box-shadow: 0px 0px 10px #000000;
-	background-color: #FFFFFF;
-	}
-#states:nth-child(1){
-	float:left
-}
-#cal{
-	float: right;
-	font-size: 20px;
-	margin-top: -3px;
-}
-.reserved{
-	background: #f00 !important;
-    color: #fff !important;
-}
+
+
 /* botton design */
 .button {
     
@@ -333,91 +165,5 @@ input{
     background-color: #008CBA;
     color: white;
 }
-/**/
-* {
-  box-sizing: border-box;
-}
 
-/* Position the image container (needed to position the left and right arrows) */
-.gallery {
-	width: 70%;
-	height: 80%;
-	position: relative;
-	grid-area: gallery;
-}
-
-/* Hide the images by default */
-.photos {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 55%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 10%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-/* review box */
-#reviewBox{
-	width: 40%;
-}
 

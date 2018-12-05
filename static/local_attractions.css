@@ -1,0 +1,50 @@
+/*attractions css*/
+.attractions {
+	font-family:Arial,Helvitica,sans-self;
+	width:36vw;
+	height:62vh;
+	background-color:#FFFFFF;
+	float:left;
+	margin-left:60px;
+}
+.attractions2 {
+	font-family:Arial,Helvitica,sans-self;
+	width:36vw;
+	height:58vh;
+	float:left;
+	margin-left:60px;
+}
+.atdiv{
+	float:left;
+	width:17vw;
+	padding-left:10px;
+	padding-bottom:10px;
+}
+.pic {
+	padding-left:10px;
+	padding-top:20px;
+}
+.text {
+	float:left;
+	width:17vw;
+	padding-left:10px;
+	padding-bottom:10px;
+}
+.clearFix{
+	clear: both;
+}
+.attitle {
+	margin-top:3vh;
+	background-color:#99CCFF;
+	padding:2em;
+	margin-left:5%;
+	margin-right:5%;
+	height:35vh;
+}
+.attractions2 {
+	font-family:Arial,Helvitica,sans-self;
+	width:36vw;
+	height:58vh;
+	float:left;
+	margin-left:60px;
+}
