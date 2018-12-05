@@ -45,17 +45,17 @@
 						<tr>
 							<td>
 								<label for="from" >Check In</label>
-								<input type="text" id="from" name="checkIn" placeholder="dd/mm/yyyy">
+								<input type="text" id="from" name="checkIn" required placeholder="dd/mm/yyyy">
 							</td>
 							
 							<td>
 								<label for="to">Check out</label>
-								<input type="text" id="to" name="checkOut" placeholder="dd/mm/yyyy">
+								<input type="text" id="to" name="checkOut" required placeholder="dd/mm/yyyy">
 							</td>
 						</tr>
 						<!-- input title and name	 -->
 						<tr>
-							<td>Title<input list="title" name="title">
+							<td>Title<input list="title" name="title" required >
 								<datalist id="title">
 									<option value="Mr">
 									<option value="Mrs">
@@ -64,12 +64,12 @@
 								</datalist>
 							</td>
 							
-							<td>Name<input type="text" name="firstName">
+							<td>Name<input type="text" name="firstName" required >
 							</td>
 						</tr>
 						<!-- set numbers of guests -->
 						<tr>
-							<td>Adult(s)<input list="adultsNumbers" name="adultsNumbers">
+							<td>Adult(s)<input list="adultsNumbers" name="adultsNumbers" required >
 							  <datalist id="adultsNumbers">
 								<option value="1">
 								<option value="2">
@@ -78,7 +78,7 @@
 							  </datalist>
 							</td>
 							
-							<td>Child(ren)<input list="childrenNumbers" name="childrenNumbers">
+							<td>Child(ren)<input list="childrenNumbers" name="childrenNumbers" required >
 							 <datalist id="childrenNumbers" >
 								<option value="0">
 								<option value="1">
@@ -90,13 +90,13 @@
 						<tr>
 							<td>
 								<!-- input contact email-->
-								E-mail<input type="email" name="email" placeholder="example@example.com">
+								E-mail<input type="email" name="email" required placeholder="example@example.com">
 								<br><br>
 							</td>
 							
 							<td>
 								<!-- input contact email-->
-								Phone Number(include country code)<input type="text" name="phoneNo" placeholder="+44123456789">
+								Phone Number(include country code)<input type="text" name="phoneNo" required placeholder="+44123456789">
 								<br><br>
 							</td>
 						</tr>

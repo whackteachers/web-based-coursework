@@ -14,8 +14,6 @@
 				<li><a href="#description">Apartment Description</a></li>
 				<li><a href="#location">Location</a></li>
 				<li><a href="#facilities">Facilities,Rooms,Transport</a></li>
-				<!-- <li><a href="#rooms">Rooms</a></li> -->
-				<!-- <li><a href="#transport">Transport</a></li> -->
 				<li><a href="#details">Other Details</a></li>
 				<li><a href="#owner">Owner</a></li>
 				<li><a href="#reviews">Reviews</a></li>
@@ -65,20 +63,10 @@
 						<div class="numbertext">9 / 9</div>
 							<img src="../static/property/property9.jpg" style="width:100%">
 					</div>
+					
 					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 					<a class="next" onclick="plusSlides(1)">&#10095;</a>
 					
-					<!-- <div class="row"> -->
-						<!-- <div class="column"> -->
-						  <!-- <img class="demo cursor" src="../static/property/property1.jpg" onclick="currentSlide(1)" alt="1"> -->
-						<!-- </div> -->
-						<!-- <div class="column">  -->
-						  <!-- <img class="demo cursor" src="../static/property/property2.jpg" onclick="currentSlide(2)" alt="2"> -->
-						<!-- </div> -->
-						<!-- <div class="column"> -->
-						  <!-- <img class="demo cursor" src="../static/property/property3.jpg" onclick="currentSlide(3)" alt="3"> -->
-						<!-- </div> -->
-					<!-- </div> -->
 						<div class="row">
 							<div class="column">
 							  <img class="demo cursor" src="../static/property/property1.jpg" style="width:100%" onclick="currentSlide(1)">
@@ -211,9 +199,7 @@
 								<li>1 living room</li>
 							</ul>
 						</div>
-						<!-- Size: 645 sq. ft.				2 bathroom -->
-						<!-- 1 twin en-suite bedroom		1 master bedroom -->
-						<!-- 1 kitchen						1 living room-->
+
 					</div>
 					<!--transport-->
 					<div id="transport" class ="anchor">
@@ -253,21 +239,21 @@
 				   STRICTLY NOT SUITABLE FOR HENS PARTY, STAGS PARTY OR ROWDY GROUPS
 				</p>
 			</div>
-			<!--owner--><!--with contact owner button-->
+			<!--owner information-->
 			<div id=owner class ="anchor">
-				<h2>Owner   <button type="button" id=contOwner>Contact owner</button></h2>        
+				<h2>Owner</h2>        
 				
 				<h4>Henry Wade</h4>
 				<p>Hi, I am Henry Wade! Nice to see you guys interested in my property. I run many other similiar holiday property in the UK for many years and always have positive feedback from customers.
 				If you have any question, feel free to ask me anytime! :)</p>
 			</div>
-			<!--reviews-->
+			<!--reviews section-->
 			<div id=reviews class ="anchor">
 				<h2>Reviews</h2>
 				<form action="addReviews"  method= "post" id="userReview" autocomplete="off">
 					
 					Name:
-					<input id="namebox" type="text" name="reviewerName" maxlength="32" size="20" placeholder="Your name" >
+					<input id="namebox" type="text" name="reviewerName" required maxlength="32" size="20" placeholder="Your name" >
 					<!-- Star rating -->
 					&#9; Rating:
 					<div class="rating">
@@ -304,27 +290,47 @@
 					</div>
 					<br>
 					Title:<br>
-					<input id="title" type="text" name="title" size="20" placeholder="Title">
+					<input id="title" type="text" name="title" required size="20" placeholder="Title">
 					<br>
 					Your comments<br>
-					<textarea id="reviewBox" rows="6" form="userReview" name="review" placeholder="Your comments"></textarea><br>
+					<textarea id="reviewBox" rows="6" form="userReview" required name="review" placeholder="Your comments"></textarea><br>
 					
 					<button class="button button1" type="submit" value="submit">Submit</button>
 					
 				</form>
 				
-				<table>
+				<br><br>
+				<!-- display reviews from csv -->
+				
 				{% for line in detailList%}
-				<tr>
-					{% for items in line%}
-					<td>
-						{{items}}
-					</td>
-					{% endfor%}
-				</tr>
+					<div class="reviewList">
+					{{line[0]}} <span id="reviewTime">{{line[4]}}</span><br><br>
+					<h3 id="reviewTitle">{{line[2]}}</h3>
+					<!-- display respective number of colored star according to rating -->
+					<!-- {# -->
+						<!-- {% set starNum = line[1]|int %} -->
+						<!-- {% for i in range(1,5)%} -->
+						<!-- {% if i == starNum %} -->
+							<!-- <span class="icon" style="color: #F0FF00;">★</span> -->
+							<!-- {% else %} -->
+							<!-- display remaining stars in black -->
+							<!-- <span class="icon">★</span> -->
+						<!-- {% endif %} -->
+						<!-- {%endfor%} -->
+						<!-- {% int(line[1])for line in range(5-line[1])%} -->
+						<!-- {%endfor%} -->
+					<!-- #} -->
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<br>
+					<span id="reviewText">{{line[3]}}</span><br>
+					</div>
 				{%endfor%}
 				
-			</table>
+				
 					
 				<!-- name ----------------------------------------------------------------------------------------------- -->
 				<!-- name  \   <Title> *****                                                                             | -->

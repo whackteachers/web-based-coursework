@@ -1,20 +1,23 @@
 
 
 $( function() {
-var dateFormat = "dd/mm/yy",
-checkIn = ["18/12/2018","23/12/2018", "1/1/2019"],
-checkOut = ["21/12/2018","30/12/2018","10/1/2019"],
-bookedDates = []
+	//initalize all the dates that are within the check in and check out dates
+	var dateFormat = "dd/mm/yy",
+	checkIn = ["18/12/2018","23/12/2018", "1/1/2019"],
+	checkOut = ["21/12/2018","30/12/2018","10/1/2019"],
+	bookedDates = []
 
-for (var i=0; i<checkIn.length;i++){
-	var start = $.datepicker.parseDate(dateFormat,checkIn[i]);
-	var end = $.datepicker.parseDate(dateFormat,checkOut[i]);
-	
-	while (start <= end) {
-    bookedDates.push(new Date(start));
-	console.log(bookedDates[i]);
-    start.setDate(start.getDate() + 1);
+	for (var i=0; i<checkIn.length;i++){
+		var start = $.datepicker.parseDate(dateFormat,checkIn[i]);
+		var end = $.datepicker.parseDate(dateFormat,checkOut[i]);
+		//disable the next day of checkIn day and disable follwing days until checkOut day
+		while (start <= end) {
+		bookedDates.push(new Date(start));
+		console.log(bookedDates)
+		start.setDate(start.getDate() + 1);
 	}
+	
+	function 
 }
 
 
@@ -25,6 +28,7 @@ for (var i=0; i<checkIn.length;i++){
 	  defaultDate: "+1w",
 	  changeMonth: true,
 	  numberOfMonths: 1,
+	  //disable all dates that are booked
 	  beforeShowDay: function(date){
 			for (var i = 0; i < checkIn.length; i++){
 				var s = jQuery.datepicker.formatDate(dateFormat, date);
@@ -36,6 +40,7 @@ for (var i=0; i<checkIn.length;i++){
 				}
 			}
 		},
+	  //limit the date choice of check out day to 1 day after the check in day
 	  onSelect:function(date){
 		  var nextDay = $( "#from" ).datepicker('getDate');
 		  nextDay.setDate(nextDay.getDate() + 1);
@@ -56,7 +61,7 @@ for (var i=0; i<checkIn.length;i++){
 	.on( "change", function() {
 	  to.datepicker( "option", "minDate", getDate( this ) );
 	}),
-	//choose check out date
+//choose check out date
   to = $( "#to" ).datepicker({
 	minDate: 0,
 	firstDay: '1',

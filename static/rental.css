@@ -5,7 +5,7 @@ body{
 	background-attachment: fixed;
 	background-size:cover;
 }
-/*guide bar on the top*/
+/*nav bar on the top*/
 .navBar {
 	height: 75px;
 	width:100%;
@@ -109,7 +109,7 @@ body{
 	grid-area:shalf;
 }
 .subgrid{
-	display: inline-grid;
+	display: grid;
 	grid-column-gap: 50px;
 	grid-row-gap: 50px;
 	grid-template-areas:
@@ -118,6 +118,26 @@ body{
 #sText{
 	font-size: small;
 }
+#reviewTitle{
+	display: inline;
+}
+#reviewTime{
+	color: gray;
+	margin-left: 40px;
+}
+.reviewList{
+	margin:10px;
+	padding: 20px;
+	width: 80%;
+	border-radius: 30px;
+	-moz-box-shadow: 0px 0px 20px #000000;
+    -webkit-box-shadow: 0px 0px 20px #000000;
+    box-shadow: 0px 0px 10px #000000;
+	background-color: #FFFFFF;
+}
+#reviewText{
+	line-height: 35px;
+}
 /*main content background*/
 .main {
 	background-color:#99CCFF;
@@ -125,7 +145,6 @@ body{
 	margin-left:5%;
 	margin-right:5%;
 	margin-top:75px;
-	
 }
 /*title font*/
 .title{
