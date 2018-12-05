@@ -93,6 +93,7 @@ def addReviews():
 	stars=request.form[('stars')]
 	title=request.form[('title')]
 	currentTime=datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+	currentTime+='posted on '
 	newReview=[reviewerName,stars,title,review,currentTime]
 	
 	fileName='static\\reviews.csv'
@@ -110,9 +111,6 @@ def adminLogin():
 	username=request.form['username']
 	password=request.form['password']
 	
-	requestFile='static\\requestDetail.csv'
-	requestList= readFile(requestFile)
-	
 	if (username=='admin'and password=='123456'):
 		return render_template('adminPage.html')
 		
@@ -126,6 +124,8 @@ def loginPage():
 	
 @app.route('/adminPage', methods = ['GET'])
 def adminPage():
-	return render_template('adminPage.html')
+	requestFile='static\\requestDetail.csv'
+	requestList= readFile(requestFile)
+	return render_template('adminPage.html',requestList=requestList)
 if __name__ == '__main__':
  app.run(debug = True)
