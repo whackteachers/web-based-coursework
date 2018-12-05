@@ -92,7 +92,7 @@ def addReviews():
 	review=request.form[('review')]
 	stars=request.form[('stars')]
 	title=request.form[('title')]
-	currentTime=datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+	currentTime=datetime.now().strftime('%d/%m/%Y %H:%M:%S')
 	currentTime+='posted on '
 	newReview=[reviewerName,stars,title,review,currentTime]
 	
