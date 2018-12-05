@@ -5,7 +5,7 @@
         <title>Requst for a rental</title> 
 	    <link rel="stylesheet" href="../static/rental.css" type="text/css" />
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		<script>
+		<script type="text/javascript">
 			bookedDates = [];
 			{% for line in checkInTime %}
 				bookedDates.push({{line}});
@@ -14,7 +14,7 @@
 			{% for line in checkOutTime %}
 				outDates.push({{line}});
 			{%endfor%}
-			price = {{priceAfter}};
+			var price = {{priceAfter}};
 		</script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="../static/jquery-ui.js"></script>
@@ -31,7 +31,9 @@
 		
 		
 		<div class="main" >
-			<script src="../static/calculations.js"></script>
+			<script src="../static/calculations.js">
+				var price = {{priceAfter}};
+			</script>
 
 
 			<h1>Request details</h1>
@@ -48,7 +50,7 @@
 							
 							<td>
 								<label for="to">Check out</label>
-								<input type="text" id="to" name="checkOut" placeholder="dd/mm/yyyy" onchange="daydiff()">
+								<input type="text" id="to" name="checkOut" placeholder="dd/mm/yyyy">
 							</td>
 						</tr>
 						<!-- input title and name	 -->
@@ -113,7 +115,7 @@
 		
 		<div class="calculator">
 			<p>Price/night: <span id="cal">£{{price}}</span></p>
-			<p>Duration of stay <span id="cal" class="dur">2 nights</span><p>
+			<p>Duration of stay <span id="cal" class="dur">0 nights</span><p>
 			<hr>
 			<p>Total Price: <span id="cal" class="ttp">£{{price*2}}</span></p>
 		</div>

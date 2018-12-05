@@ -1,7 +1,8 @@
-var stay = dayDiff($('#from').val(),$('#to').val());
-$('.dur').html(stay + " night(s)");
-$('.dur').show();
-console.log(stay);
+// var stay = dayDiff($('#from').val(),$('#to').val());
+// $('.dur').html(stay + " night(s)");
+// $('.dur').show();
+console.log(price);
+
 
 function getDate( element ) {
   var date;
@@ -13,7 +14,7 @@ function getDate( element ) {
 
   return date;
 }
-function dayDiff(start,end){
+function dayDiff(){
 	var startDay = new Date($('#from').val());
 	var endDay = new Date($('#to').val());
 

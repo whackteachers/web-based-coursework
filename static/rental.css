@@ -286,7 +286,7 @@ input{
 	font-size: 20px;
 	margin-top: -3px;
 }
-td.reserved > a{
+.reserved{
 	background: #f00 !important;
     color: #fff !important;
 }
