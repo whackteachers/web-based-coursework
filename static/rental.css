@@ -95,21 +95,7 @@ input{
 
 
 
-/*attributes to big map for attractions*/
-#bigMap {
-	padding-left:3%;
-	background-color:#99CCFF;
-	padding:2em;
-	margin-left:5%;
-	margin-right:5%;
-	height:70vh;
-	width:88.1vw;
-}
-#bigMap2{
-	width:75.8vw; 
-	height:65vh;
-	border:none;
-}
+
 
 
 /*attributes to small map for attractions and size for pictures*/
@@ -139,6 +125,7 @@ input{
 	border:none;
 	width:15.5vw; 
 	height:24.5vh;
+	box-shadow: 5px 10px #888888;
 }
 
 
@@ -185,4 +172,6 @@ input{
     border: 1px solid black;
     
 }
+
+
 
