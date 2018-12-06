@@ -100,7 +100,7 @@
 				</form>
 				
 			</div>
-			
+			<!-- display the calculation for price change and total price -->
 			<div class="calculator">
 				<p>Price/night: <span id="cal">£{{price}}</span></p>
 				<p>Duration of stay <span id="cal" class="dur">0 nights</span><p>
@@ -140,31 +140,30 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
-		
-		
-		
-			
+		</div>	
 			
 		
-		
+		<!-- display the request list without personal details -->
 		<div id="states" class="main2">
-			<div class="displayStates">
-				<table>
+
+		<br><br><br><br>
+		<h2>&nbsp &nbsp Requests List</h2>
+			<div class="rentalDetails">
+			
+				<table class="requestTable">
 					{% for line in simList%}
-						<tr>
-							{% for items in line%}
-								<td>
-								{{items}}
-								</td>
-							{% endfor%}
-						</tr>
+					<tr>
+						{% for items in line%}
+						<td>
+							{{items}}
+						</td>
+						{% endfor%}
+					</tr>
 					{%endfor%}
 				</table>
 			</div>
 			
 			
-		</div>
 		</div>
 	</body>
 </html>
