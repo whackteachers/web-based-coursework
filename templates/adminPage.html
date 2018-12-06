@@ -16,18 +16,31 @@
 		</ul>
 	</div>
 	<div class=main>
-		<h1>Guests List</h1>
+		<h1>All bookings</h1>
 		<br>
+		<input type="checkbox" name="selectAll">Choose all<br>
+		<input type="button" class="button button1" name="confirm">Confirm</button>
+		<hr>
 		<table>
-		{% for line in requestList%}
-		<tr>
-		{% for items in line%}
-		<td>
-		{{items}}
-		</td>
-		{% endfor%}
-		</tr>
-		{%endfor%}
+			<tr>
+				<td>Check in date</td>
+				<td>Check out date</td>
+				<td>stay time</td>
+				<td>Name</td>
+				<td>No. of people</td>
+				<td>E-mail</td>
+				<td>Phone Number</td>
+				<td>booking status</td>
+			</tr>
+			{% for line in requestList%}
+				<tr>
+				{% for items in line%}
+					<td>
+					{{items}}
+					</td>
+				{% endfor%}
+				</tr>
+			{%endfor%}
 		</table>
 		
 	</div>
