@@ -6,11 +6,10 @@
 	    <link rel="stylesheet" href="../static/rental.css" type="text/css" />
 		<link rel="stylesheet" href="../static/rental_page.css" type="text/css" />
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="../static/jquery-ui.js"></script>
 		<script src="../static/datepicker.js"></script>
-
+		<script src="../static/disableSecondSubmit.js"></script>
 	</head>
 	<body>
 		<div class="navBar">
@@ -28,7 +27,7 @@
 			<h1>Request details</h1>
 			
 			<div class="tableBox">
-				<form action="addDetails" method= "post" autocomplete="off" >
+				<form  onsubmit="return dosubmit()" action="addDetails" method= "post" autocomplete="off" >
 					<table cellpadding=10 width=400>
 					<!-- set time for check in and out  -->
 						<tr>
@@ -92,7 +91,7 @@
 						<!-- submit button	 -->
 						<tr>
 							<td>
-								<button class="button button1" type="submit" value="submit">Submit</button>
+								<button class="button button1"  type="submit" value="submit" id="submit">Submit</button>
 							</td>
 						</tr>
 					</table>

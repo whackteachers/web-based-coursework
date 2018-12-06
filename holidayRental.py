@@ -49,7 +49,7 @@ def rentalDetail():
     requestFile='static\\simDetail.csv'
     simList= readFile(requestFile)
     
-    return render_template('request.html', simList=simList	, price=price, price_rates=rates)
+    return render_template('request.html', simList=simList, price=price, price_rates=rates)
 
 #turn to attactions page
 @app.route('/attractions', methods = ['GET'])
