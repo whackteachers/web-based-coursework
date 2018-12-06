@@ -1,6 +1,7 @@
 .login{
 	position:absolute;
 	right: 1%;
+	top: 45%;
 }
 .mini{
 	position:absolute;
@@ -19,7 +20,9 @@
 }
 .price{
 	position:absolute;
-	right: 10%
+	right: 10%;
+	bottom: -10%;
+	font-weight: bold;
 }
 .upper_grid{
 	display: inline-grid;
