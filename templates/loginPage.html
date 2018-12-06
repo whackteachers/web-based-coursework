@@ -16,13 +16,14 @@
 			</ul>
 		</div>
 		<div class=main>
-		<h1>Welcome</h1>
-			
+		<h1>Admin Login</h1>
+			<!-- username and password input form -->
             <form class="form" method="post" action="adminLogin" >
                 <input type="text" placeholder="Username" name="username">
                 <input type="password" placeholder="Password" name="password">
                 <a href="/adminLogin"><button class="button button1" type="submit" value="submit">Login</button></a>
 				<br>
+				<!-- error message shows when input wrong username or password -->
 				<p>{{message}}</p>
             </form>
 		</div>

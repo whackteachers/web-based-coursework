@@ -1,3 +1,4 @@
+/* login link */
 .login{
 	position:absolute;
 	right: 1%;
@@ -81,6 +82,7 @@
 	color: gray;
 	margin-left: 40px;
 }
+
 .reviewList{
 	margin:10px;
 	padding: 20px;
