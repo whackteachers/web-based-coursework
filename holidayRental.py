@@ -8,7 +8,9 @@ from datetime import datetime
 app = Flask(__name__)
 
 enterTime = datetime.now().month
-rates = [1.25,1.15,1.3,0.9]
+#respective periods for rates:
+#(previous year)december-january, Feburary, March-April, May-June, July-August, September-November
+rates = [1.25,1,1.15,1,1.3,0.9]
 price = 71
 if (enterTime in (12,1)):
 	applyRates = rates[0]
@@ -24,7 +26,7 @@ priceAfter = round(71* applyRates,2)
 def home(): 
 	reviewFile='static\\reviews.csv'
 	detailList= readFile(reviewFile)
-	return render_template('home.html',detailList=detailList,displayPrice=priceAfter)
+	return render_template('home.html',detailList=detailList,displayPrice=price)
 
 #Set file reading and writing function	
 
@@ -47,7 +49,7 @@ def rentalDetail():
     requestFile='static\\simDetail.csv'
     simList= readFile(requestFile)
     
-    return render_template('request.html', simList=simList	, price=priceAfter)
+    return render_template('request.html', simList=simList	, price=price, price_rates=rates)
     
 @app.route('/attractions', methods = ['GET'])
 def attractions():
