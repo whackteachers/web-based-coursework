@@ -37,7 +37,7 @@
 			</script>
 
 
-			<h1>Request details</h1>
+			<h1>&nbsp Request details</h1>
 
 			<div class="tableBox">
 				<form action="addDetails" method= "post" autocomplete="off" >
@@ -125,23 +125,25 @@
 		
 		
 		<div id="states" class="main2">
-			<div class="displayStates">
+		<br><br><br><br>
+		<h2>  &nbsp &nbsp Requests List</h2>
+			<div class="rentalDetails">
 			
-				<table>
+				<table class="requestTable">
 					{% for line in simList%}
 					<tr>
 						{% for items in line%}
 						<td>
 							{{items}}
 						</td>
-					{% endfor%}
+						{% endfor%}
 					</tr>
-				{%endfor%}
-			</table>
+					{%endfor%}
+				</table>
 			</div>
 			
 			
 			</div>
-			</div>
+			
 	</body>
 </html>
