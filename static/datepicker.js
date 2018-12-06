@@ -7,18 +7,18 @@ $( function() {
 	checkOut = ["21/12/2018","30/12/2018","10/1/2019"],
 	bookedDates = []
 
-	for (var i=0; i<checkIn.length;i++){
-		var start = $.datepicker.parseDate(dateFormat,checkIn[i]);
-		var end = $.datepicker.parseDate(dateFormat,checkOut[i]);
-		//disable the next day of checkIn day and disable follwing days until checkOut day
-		while (start <= end) {
-		bookedDates.push(new Date(start));
-		console.log(bookedDates)
-		start.setDate(start.getDate() + 1);
-	}
+	// for (var i=0; i<checkIn.length;i++){
+		// var start = $.datepicker.parseDate(dateFormat,checkIn[i]);
+		// var end = $.datepicker.parseDate(dateFormat,checkOut[i]);
+		// //disable the next day of checkIn day and disable follwing days until checkOut day
+		// while (start <= end) {
+		// bookedDates.push(new Date(start));
+		// console.log(bookedDates)
+		// start.setDate(start.getDate() + 1);
+	// }
 	
-	function 
-}
+	// function 
+// }
 
 
 //choosing the check in date
