@@ -1,0 +1,14 @@
+/* make content in the centre */
+body {TEXT-ALIGN: center!important;}
+#center { MARGIN-RIGHT: auto; MARGIN-LEFT: auto; }
+
+/* botton design */
+.button {
+    
+    padding: 10px 20px!important;
+	border-radius:7px;
+}
+p {
+	font-size:20px;
+	color:red;
+}
