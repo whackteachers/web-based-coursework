@@ -18,13 +18,15 @@
 				<li><a href="/attractions">Attractions</a></li>
 			</ul>
 		</div>
-			
+		
+		
 		<div class="main" >
 			<script src="../static/calculations.js"></script>
-		<!-- <h1>Request details</h1> -->
+
+
+			<h1>Request details</h1>
 			
-			<div id="tableBox">
-			<h1>&nbsp &nbsp Request details</h1>
+			<div class="tableBox">
 				<form  onsubmit="return dosubmit()" action="addDetails" method= "post" autocomplete="off" >
 					<table cellpadding=10 width=400>
 					<!-- set time for check in and out  -->
@@ -76,7 +78,6 @@
 						<tr>
 							<td>
 								<!-- input contact email-->
-								<br>
 								E-mail<input type="email" name="email" required placeholder="example@example.com">
 								<br><br>
 							</td>
@@ -89,8 +90,6 @@
 						</tr>
 						<!-- submit button	 -->
 						<tr>
-						<td>
-						</td>
 							<td>
 								<button class="button button1"  type="submit" value="submit" id="submit">Submit</button>
 							</td>
@@ -98,12 +97,10 @@
 					</table>
 					
 				</form>
+				
 			</div>
-			<div id="space">
-			</div>
-			<div class="calculator">
 			<!-- display the calculation for price change and total price -->
-			<h2>&nbsp &nbsp Total Price</h2>
+			<div class="calculator">
 				<p>Price/night: <span id="cal" class="fprice">£{{price}}</span></p>
 				<p>Duration of stay <span id="cal" class="dur">0 nights</span><p>
 				<hr>
@@ -141,9 +138,13 @@
 						</tr>
 					</tbody>
 				</table>
-				<br><br><br><br>
-				<!-- display the request list without personal details -->
-				<h2>&nbsp &nbsp Requests List</h2>
+			</div>
+			
+			<!-- display the request list without personal details -->
+			<br><br><br><br>
+		<h2>&nbsp &nbsp Requests List</h2>
+			<div class="rentalDetails">
+			
 				<table class="requestTable">
 					<tr>
 						<th>Check In</th>
@@ -158,8 +159,34 @@
 					</tr>
 					{%endfor%}
 				</table>
-			
 			</div>
 			
 			
+		</div>
+		</div>	
+			
+		
+		
+		<!-- <div id="states" class="main2"> -->
+
+		<!-- <br><br><br><br> -->
+		<!-- <h2>&nbsp &nbsp Requests List</h2> -->
+			<!-- <div class="rentalDetails"> -->
+			
+				<!-- <table class="requestTable"> -->
+					<!-- {% for line in simList%} -->
+					<!-- <tr> -->
+						<!-- {% for items in line%} -->
+						<!-- <td> -->
+							<!-- {{items}} -->
+						<!-- </td> -->
+						<!-- {% endfor%} -->
+					<!-- </tr> -->
+					<!-- {%endfor%} -->
+				<!-- </table> -->
+			<!-- </div> -->
+			
+			
+		<!-- </div> -->
 	</body>
+</html>

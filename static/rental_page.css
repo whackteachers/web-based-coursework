@@ -2,22 +2,39 @@
 #tableBox{
 	display: inline-table;
 	margin-left:4%;
-	width: 50%;
+	padding:20px;
+	border-radius: 30px;
+	-moz-box-shadow: 0px 0px 20px #000000;
+    -webkit-box-shadow: 0px 0px 20px #000000;
+    box-shadow: 0px 0px 10px #000000;
+	background-color: #FFFFFF;
+	float:left;
 }
 .calculator{
+	
 	margin:0;
 	padding: 20px;
-	position: absolute;
+	/* position: absolute; */
+	float:left;
 	top: 30%;
 	right: 15%;
 	width: 32%;
-	height: 65%;
+	/* height: 65%; */
 	border-radius: 30px;
 	-moz-box-shadow: 0px 0px 20px #000000;
     -webkit-box-shadow: 0px 0px 20px #000000;
     box-shadow: 0px 0px 10px #000000;
 	background-color: #FFFFFF;
 	}
+	
+#space{
+	float:left;
+	width:5vw;
+	height:40vh;
+}
+.main{
+	height:120vh!important;
+}
 #states:nth-child(1){
 	float:left
 }
@@ -32,4 +49,12 @@
 .reserved{
 	background: #f00 !important;
     color: #fff !important;
+}
+input{
+border:1.3px solid #008CBA!important;}
+h2{
+	 border-left: 6px solid #008CBA!important;
+  background-color: lightgrey!important;
+}
+button{float:right!important;
 }
