@@ -1,29 +1,22 @@
-
-
 $( function() {
-	//initalize all the dates that are within the check in and check out dates
+	//initalize all the check in and check out dates
 	var dateFormat = "dd/mm/yy",
-	checkIn = ["18/12/2018","23/12/2018", "1/1/2019"],
-	checkOut = ["21/12/2018","30/12/2018","10/1/2019"],
-	bookedDates = []
-
-	for (var i=0; i<checkIn.length;i++){
-		var start = $.datepicker.parseDate(dateFormat,checkIn[i]);
-		var end = $.datepicker.parseDate(dateFormat,checkOut[i]);
-		//disable the next day of checkIn day and disable follwing days until checkOut day
-		while (start <= end) {
-		bookedDates.push(new Date(start));
-		console.log(bookedDates)
-		start.setDate(start.getDate() + 1);
+	/*["18/12/2018","23/12/2018", "1/1/2019"]*/
+	/*["21/12/2018","30/12/2018","10/1/2019"]*/
+	
+	arrive = document.getElementsByClassName("checkin"),
+	leave = document.getElementsByClassName("checkout"),
+	checkIn = [],
+	checkOut = [];
+	for (var i=0; i<arrive.length; i++){
+		checkIn.push(arrive[i].innerHTML);
+		checkOut.push(leave[i].innerHTML);
 	}
 	
-	function 
-}
-
+	console.log(checkIn);
 
 //choosing the check in date
-  from = $( "#from" )
-	.datepicker({
+  from = $( "#from" ).datepicker({
 	  minDate: 0,
 	  defaultDate: "+1w",
 	  changeMonth: true,
@@ -31,9 +24,24 @@ $( function() {
 	  //disable all dates that are booked
 	  beforeShowDay: function(date){
 			for (var i = 0; i < checkIn.length; i++){
+				//get date in uk format
 				var s = jQuery.datepicker.formatDate(dateFormat, date);
-				var booked = bookedDates.indexOf(s) != -1 ;
-				if(booked){
+				//look at the first set of checkin and checkOut dates
+				var startString = checkIn[i].split("/");
+				var temp = "";
+				var start = temp.concat(startString[1],"/",startString[0],"/",startString[2]);
+				console.log(temp);
+				start = new Date(start);
+				start = jQuery.datepicker.formatDate(dateFormat, start);
+				
+				var endString = checkOut[i].split("/");
+				var temp = "";
+				var end = temp.concat(endString[1],"/",endString[0],"/",endString[2]);
+				end = new Date(end);
+				end = jQuery.datepicker.formatDate(dateFormat, end);
+				
+				console.log(s+" "+start+" "+end);
+				if(s.getTime <= end.getTime && s.getTime >= start.getTime){
 					return [false , "reserved","booking"]
 				}else{
 					return [true , '']
@@ -45,6 +53,8 @@ $( function() {
 		  var nextDay = $( "#from" ).datepicker('getDate');
 		  nextDay.setDate(nextDay.getDate() + 1);
 		  $("#to").datepicker( "option", "minDate", nextDay );
+		  
+		  
 	  },
 	  // onChangeMonthYear : function(date){
 		  // for (var i = 0; i < checkIn.length; i++){

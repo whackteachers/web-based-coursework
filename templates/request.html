@@ -5,7 +5,7 @@
         <title>Requst for a rental</title> 
 	    <link rel="stylesheet" href="../static/rental.css" type="text/css" />
 		<link rel="stylesheet" href="../static/rental_page.css" type="text/css" />
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
 		
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="../static/jquery-ui.js"></script>
@@ -102,40 +102,40 @@
 			</div>
 			<!-- display the calculation for price change and total price -->
 			<div class="calculator">
-				<p>Price/night: <span id="cal">£{{price}}</span></p>
+				<p>Price/night: <span id="cal" class="fprice">£{{price}}</span></p>
 				<p>Duration of stay <span id="cal" class="dur">0 nights</span><p>
 				<hr>
-				<p>Total Price: <span id="cal" class="ttp">£{{price*2}}</span></p>
+				<p>Total Price: <span id="cal" class="ttp">£0</span></p>
 				
 				<table class="ratesTable">
 					<tbody>
 						<tr>
-							<th>Months</th>
+							<th style="text-align:left">Months</th>
 							<th>Rates</th>
 						</tr>
 						<tr>
 							<td>Dec-Jan</td>
-							<td>{{price_rates[0]}}</td>
+							<td class="rates">{{price_rates[0]}}</td>
 						</tr>
 						<tr>
 							<td>Feb</td>
-							<td>{{price_rates[1]}}</td>
+							<td class="rates">{{price_rates[1]}}</td>
 						</tr>
 						<tr>
 							<td>Mar-Apr</td>
-							<td>{{price_rates[2]}}</td>
+							<td class="rates">{{price_rates[2]}}</td>
 						</tr>
 						<tr>
 							<td>May-Jun</td>
-							<td>{{price_rates[3]}}</td>
+							<td class="rates">{{price_rates[3]}}</td>
 						</tr>
 						<tr>
 							<td>Jul-Aug</td>
-							<td>{{price_rates[4]}}</td>
+							<td class="rates">{{price_rates[4]}}</td>
 						</tr>
 						<tr>
 							<td>Sep-Nov</td>
-							<td>{{price_rates[5]}}</td>
+							<td class="rates">{{price_rates[5]}}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -147,17 +147,20 @@
 		<div id="states" class="main2">
 
 		<br><br><br><br>
-		<h2>&nbsp &nbsp Requests List</h2>
+		<h2>Requests List</h2>
 			<div class="rentalDetails">
 			
 				<table class="requestTable">
-					{% for line in simList%}
 					<tr>
-						{% for items in line%}
-						<td>
-							{{items}}
-						</td>
-						{% endfor%}
+						<th>Check In</th>
+						<th>Check Out</th>
+						<th>Booking Status</th>
+					</tr>
+					{% for line in simList%}
+					<tr class="bookingLine">
+						<td class="checkin">{{line[0]}}</td>
+						<td class="checkout">{{line[1]}}</td>
+						<td class="status">{{line[2]}}</td>
 					</tr>
 					{%endfor%}
 				</table>
