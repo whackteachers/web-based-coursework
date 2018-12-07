@@ -2,12 +2,12 @@
 #tableBox{
 	display: inline-table;
 	margin-left:4%;
-	padding:20px;
-	border-radius: 30px;
-	-moz-box-shadow: 0px 0px 20px #000000;
-    -webkit-box-shadow: 0px 0px 20px #000000;
-    box-shadow: 0px 0px 10px #000000;
-	background-color: #FFFFFF;
+	/* padding:20px; */
+	/* border-radius: 30px; */
+	/* -moz-box-shadow: 0px 0px 20px #000000; */
+    /* -webkit-box-shadow: 0px 0px 20px #000000; */
+    /* box-shadow: 0px 0px 10px #000000; */
+	/* background-color: #FFFFFF; */
 	float:left;
 }
 .calculator{
@@ -29,7 +29,7 @@
 	
 #space{
 	float:left;
-	width:5vw;
+	width:10vw;
 	height:40vh;
 }
 .main{
@@ -55,6 +55,4 @@ border:1.3px solid #008CBA!important;}
 h2{
 	 border-left: 6px solid #008CBA!important;
   background-color: lightgrey!important;
-}
-button{float:right!important;
 }
