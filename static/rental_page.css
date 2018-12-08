@@ -10,27 +10,31 @@
 	background-color: #FFFFFF;
 	float:left;
 }
-.calculator{
-	
+.bookings,
+.price_summary{
 	margin:0;
 	padding: 20px;
-	/* position: absolute; */
+	position: absolute;
 	float:left;
 	top: 30%;
-	right: 15%;
-	width: 32%;
-	/* height: 65%; */
+	right: 30%;
+	width: 30%;
+	height: 30%;
 	border-radius: 30px;
 	-moz-box-shadow: 0px 0px 20px #000000;
     -webkit-box-shadow: 0px 0px 20px #000000;
     box-shadow: 0px 0px 10px #000000;
 	background-color: #FFFFFF;
-	}
-	
-#space{
-	float:left;
-	width: 15vw;
-	height:40vh;
+}
+#bookingForm td{
+	padding: 10px; 
+	width: 100px;
+	margin-bottom: 10px;
+}
+.bookings{
+	float: none;
+	top: 11%;
+	right: 30%;
 }
 .main{
 	height:120vh!important;
@@ -38,30 +42,29 @@
 #states:nth-child(1){
 	float:left
 }
-#cal{
+.price_info{
 	float: right;
 	font-size: 20px;
 	margin-top: -3px;
-}
-.ratesTable td{
-	padding-right: 20px;
 }
 .reserved{
 	background: #f00 !important;
     color: #fff !important;
 }
 input{
-border:1.3px solid #008CBA!important;}
+	border:1.3px solid #008CBA!important;}
 h2{
-	 border-left: 6px solid #008CBA!important;
-  background-color: lightgrey!important;
+	border-left: 6px solid #008CBA!important;
+	background-color: lightgrey!important;
 }
 
-.requestTable {
+.requestTable{
     border: 1px solid black;
-	width: 200px; 
-	min-height: 25px; 
-	line-height: 25px; 
-	border-collapse: collapse;
-    
+    width: 200px;
+    min-height: 25px;
+    line-height: 25px;
+    border-collapse: collapse;
+}
+.requestTable td{
+	padding: 8px;
 }

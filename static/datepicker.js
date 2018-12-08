@@ -27,7 +27,9 @@ for (var i=0; i<arrive.length; i++){
 			for (var i = 0; i < checkIn.length; i++){
 				var s = jQuery.datepicker.formatDate(dateFormat, date);
 				var booked = checkIn.indexOf(s) != -1 ;
-				if(booked || (s-1>checkIn[i] && s-1<checkOut[i])){
+				console.log(s);
+				console.log(checkIn);
+				if(booked || (s>checkIn && s<checkOut)){
 					return [false , "reserved","booking"]
 				}else{
 					return [true , '']
@@ -39,13 +41,11 @@ for (var i=0; i<arrive.length; i++){
 		  var nextDay = $( "#from" ).datepicker('getDate');
 		  nextDay.setDate(nextDay.getDate() + 1);
 		  $("#to").datepicker( "option", "minDate", nextDay );
-		  
-		  
 	  }
 	})
 	.on( "change", function() {
 	  to.datepicker( "option", "minDate", getDate( this ) );
-	}),
+	})
 //choose check out date
   to = $( "#to" ).datepicker({
 	minDate: 0,
@@ -68,10 +68,8 @@ for (var i=0; i<arrive.length; i++){
   })
   .on( "change", function() {
 	from.datepicker( "option", "minDate", startDay );
-  });
-  
-  
-} );
+  })
+})
 
 function getDate( element ) {
   var date;

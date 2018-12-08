@@ -59,6 +59,9 @@ def writeFile(aList,aFile):
 @app.route('/rentalDetail', methods = ['GET'])
 def rentalDetail():
 	simList= readFile(simFile)
+	if not tempBookings:
+		tempBookings.clear()
+		pricing.clear()
 	return render_template('request.html', simList=simList, tempBookings=tempBookings)
 
 #turn to local attactions page
@@ -94,7 +97,7 @@ def bookingSummary():
 			#prompt message to remind the user of double booking
 			dbMessage = "Double Booking: You have already made this booking!"
 			simList=readFile(simFile)
-			return render_template('request.html', simList=simList, Message=dbMessage)
+			return render_template('request.html', simList=simList, Message=dbMessage, tempBookings=tempBookings)
 	#calculate the staying time and total price 
 	d1 = datetime.strptime(checkIn, "%d/%m/%Y")
 	d2 = datetime.strptime(checkOut, "%d/%m/%Y")
