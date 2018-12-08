@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Admin login</title>
 		<link rel="stylesheet" href="../static/rental.css" type="text/css" />
-	
+		<link rel="stylesheet" href="../static/adminPage.css" type="text/css" />
 </head>
 <body>
 	<div class="navBar">
@@ -15,33 +15,44 @@
 			<li><a href="/attractions">Attractions</a></li>
 		</ul>
 	</div>
-	<div class=main>
+	<div class="main">
+	<div class="tableBox">
 		<h1>All bookings</h1>
-		<br>
-		<button class="button button1" name="confirm">Confirm</button>
-		<hr>
+		
 		
 		<!-- shows the rental request detail list -->
 		<table>
 			<tr>
-				<th><input type="checkbox" name="selectAll">Choose all</th>
+				
 				<th>Check in date</th>
 				<th>Check out date</th>
+				<th>Title</th>
 				<th>Name</th>
-				<th>No. of people</th>
+				<th>No. of adults</th>
+				<th>No. of children</th>
 				<th>E-mail</th>
 				<th>Phone Number</th>
 				<th>booking status</th>
+				
+				<th><input type="checkbox" name="selectAll">Choose all</th>
 			</tr>
 			{% for line in requestList%}
 				<tr>
+				{% for item in line %}
 					<td>
-					{{line}}
+					{{item}}
 					</td>
+					
+					{%endfor%}
+					
 				</tr>
 			{%endfor%}
 		</table>
+		<br>
+		<hr>
+		<button class="button button1" name="confirm">Confirm</button>
 		
+	</div>
 	</div>
 </body>
 </html>

@@ -161,7 +161,8 @@ def adminLogin():
 	password=request.form['password']
 	#check if username and password are both correct
 	if (username=='admin'and password=='123456'):
-		return render_template('adminPage.html')
+		requestList= readFile(requestFile)
+		return render_template('adminPage.html',requestList=requestList)
 		
 	else:
 		message='Username or password is not correct!Try again'
