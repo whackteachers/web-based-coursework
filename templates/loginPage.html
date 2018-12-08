@@ -16,35 +16,33 @@
 			</ul>
 		</div>
 		<div class="main">
-			<!-- <div id="center"> -->
-		<h1>Admin Login</h1>
-			<!-- username and password input form -->
-            <form class="form" method="post" action="adminLogin" autocomplete="off"   >
-				<table id="center">
-					<tr>
-						<td>
-						Username:
-						</td>
-						<td>
-						<input type="text" placeholder="Username" name="username" required>
-						</td>
-					</tr>
-					<tr>
-						<td>
-						Password:
-						</td>
-						<td>
-						<br>
-						<input type="password" placeholder="Password" name="password" required><br><br>
-						</td>
-					</tr>
-				</table>
-                <a href="/adminLogin"><button class="button button1" type="submit" value="submit">Login</button></a>
-				<br>
-				<!-- error message shows when input wrong username or password -->
-				<p>{{message}}</p>
-            </form>
-			<!-- <div> -->
+			<h1>Admin Login</h1>
+				<!-- username and password input form -->
+				<form class="form" method="post" action="adminLogin" autocomplete="off"   >
+					<table id="center">
+						<tr>
+							<td>
+							Username:
+							</td>
+							<td>
+							<input type="text" placeholder="Username" name="username" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							Password:
+							</td>
+							<td>
+							<br>
+							<input type="password" placeholder="Password" name="password" required><br><br>
+							</td>
+						</tr>
+					</table>
+					<a href="/adminLogin"><button class="button button1" type="submit" value="submit">Login</button></a>
+					<br>
+					<!-- error message shows when input wrong username or password -->
+					<p>{{message}}</p>
+				</form>
 		</div>
 	</body>
 </html>

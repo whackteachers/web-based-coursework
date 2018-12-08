@@ -90,7 +90,7 @@
 			</div>
 			<div class="bookings">
 				<!-- display the request list without personal details -->
-				<h2>&nbsp &nbsp All Bookings</h2>
+				<h2>&nbsp;&nbsp; All Bookings</h2>
 				<table class="requestTable">
 					<tr>
 						<th>Check In</th>
@@ -98,11 +98,11 @@
 						<th>Booking Status</th>
 					</tr>
 					{% for line in simList%}
-					<tr class="bookingLine">
-						<td class="checkin">{{line[0]}}</td>
-						<td class="checkout">{{line[1]}}</td>
-						<td class="status">{{line[2]}}</td>
-					</tr>
+						<tr class="bookingLine">
+							<td class="checkin">{{line[0]}}</td>
+							<td class="checkout">{{line[1]}}</td>
+							<td class="status">{{line[2]}}</td>
+						</tr>
 					{%endfor%}
 				</table>
 			</div>

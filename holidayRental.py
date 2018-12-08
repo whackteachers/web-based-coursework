@@ -63,9 +63,8 @@ def rentalDetail():
 	simList= readFile(simFile)
 	#clear the temporary array contents
 	if not tempBookings:
-		tempBookings.clear()
-		pricing.clear()
-	return render_template('request.html', simList=simList, tempBookings=tempBookings)
+		pricing = []
+	return render_template('request.html', simList=simList, tempBookings=[])
 
 #turn to local attactions page
 @app.route('/attractions', methods = ['GET'])
@@ -93,7 +92,6 @@ def bookingSummary():
 	tempDetails = [checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email,phoneNo,confirmation]
 	tempBookings.extend(tempDetails)
 	
-	requestFile='static\\requestDetail.csv'
 	allBookings=readFile(requestFile)
 	#check if all the details apart from email and phone number are the same
 	for line in allBookings:
@@ -129,12 +127,11 @@ def addDetails():
 	simList.append(simDetail)
 	writeFile(simList,simFile)
 	#alert that the information has been submitted
-	MessageBox = ctypes.windll.user32.MessageBoxW
-	MessageBox(None, 'Your request has been sent to the admin, please check your email later!', 'Nearly finish', 0)
+	Message = "Your request has been sent to the admin, please check your email later!"
 	#send information without personal details to html
 	simList= readFile(simFile)
 	
-	return render_template('request.html',simList=simList,)
+	return render_template('request.html',simList=simList,Message=Message, tempBookings=[])
 
 #function for reviews submit bottpn
 @app.route('/addReviews', methods= ['POST','GET'])

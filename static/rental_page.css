@@ -33,8 +33,9 @@
 }
 .bookings{
 	float: none;
-	top: 11%;
-	right: 30%;
+	top: 6.5em;
+	right: 20vw;
+	height: 42vh;
 }
 .main{
 	height:120vh!important;

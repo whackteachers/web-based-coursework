@@ -29,7 +29,7 @@ for (var i=0; i<arrive.length; i++){
 				var booked = checkIn.indexOf(s) != -1 ;
 				console.log(s);
 				console.log(checkIn);
-				if(booked || (s>checkIn && s<checkOut)){
+				if(booked){
 					return [false , "reserved","booking"]
 				}else{
 					return [true , '']
@@ -67,7 +67,7 @@ for (var i=0; i<arrive.length; i++){
 	}
   })
   .on( "change", function() {
-	from.datepicker( "option", "minDate", startDay );
+	from.datepicker( "option", "minDate", getDate( this ) );
   })
 })
 

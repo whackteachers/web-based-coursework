@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
 		<title>Booking Summary</title>
@@ -16,7 +16,10 @@
 		<div class="main">
 			<h1>Summary</h1>
 			<h2>Please check your booking details and price before checkout</h2>
-            <a href="/backToRequest"><button class="button button1">Go Back</button></a>
+			<form action="/backToRequest" method="get">
+				<button class="button button1" type="submit">Go Back</button>
+			</form>
+            <!-- <a href="/backToRequest"><button class="button button1">Go Back</button></a> -->
 			<p>From {{tempDetails[0]}} to {{tempDetails[1]}}</p>
 			<p>Name: {{tempDetails[2]}} {{tempDetails[3]}}</p>
 			<p>No. of people: {{tempDetails[4]}} adults, {{tempDetails[5]}} children</p>
@@ -30,7 +33,10 @@
 				<hr>
 				<p>Total Price: <span class="price_info">£{{pricing[2]}}</span></p>
 			</div>
-			<a href="/addDetails"><button class="button button1">Checkout</button></a>
+			<form action="/addDetails" method="get">
+				<button class="button button1" type="submit">Checkout</button>
+			</form>
+			<!-- <a href="/addDetails"><button class="button button1">Checkout</button></a> -->
 		</div>
 	</body>
 </html>

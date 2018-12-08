@@ -23,7 +23,9 @@
 			</ul>
 			
 			<div class=price>£{{displayPrice}}/ night<br>(*without rates)</div>
-			<a href="/rentalDetail" style="padding:0"><button class="button button1" type="button" id=rent>Rent Now!</button></a>
+			<form style="padding:0" action="/rentalDetail" method="get">
+				<button class="button button1" type="submit" id=rent>Rent Now!</button>
+			</form>
 			<a href="/loginPage" class="login">admin login</a>
 		</div>			
 
