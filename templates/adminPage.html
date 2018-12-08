@@ -1,58 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-		<meta charset="UTF-8">
+	<head>
+			<meta charset="UTF-8">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Admin login</title>
-		<link rel="stylesheet" href="../static/rental.css" type="text/css" />
-		<link rel="stylesheet" href="../static/adminPage.css" type="text/css" />
-</head>
-<body>
-	<div class="navBar">
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/attractions">Attractions</a></li>
-		</ul>
-	</div>
-	<div class="main">
-	<div class="tableBox">
-		<h1>All bookings</h1>
-		
-		
-		<!-- shows the rental request detail list -->
-		<table>
-			<tr>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Admin login</title>
+			<link rel="stylesheet" href="../static/rental.css" type="text/css" />
+			<link rel="stylesheet" href="../static/adminPage.css" type="text/css" />
+			<script>
+				function checkAll(box){
+					checkboxes = document.getElementsByName('bkLine');
+					var n=checkboxes.length
+					for(var i=0 ; i<n ; i++) {
+						checkboxes[i].checked = box.checked;
+					}
+				}
 				
-				<th>Check in date</th>
-				<th>Check out date</th>
-				<th>Title</th>
-				<th>Name</th>
-				<th>No. of adults</th>
-				<th>No. of children</th>
-				<th>E-mail</th>
-				<th>Phone Number</th>
-				<th>booking status</th>
-				
-				<th><input type="checkbox" name="selectAll">Choose all</th>
-			</tr>
-			{% for line in requestList%}
-				<tr>
-				{% for item in line %}
-					<td>
-					{{item}}
-					</td>
-					
+				function disableConfirm() {
+					if (document.getElementById("bkLine").checked) {
+						document.getElementById("confirm").disabled = false;
+					} else {
+						document.getElementById("confirm").disabled = true;
+					}
+				}
+			</script>
+	</head>
+	<body>
+		<div class="navBar">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/attractions">Attractions</a></li>
+			</ul>
+		</div>
+		<div class="main">
+			<div class="tableBox">
+				<h1>All bookings</h1>
+				<!-- shows the rental request detail list -->
+				<table>
+					<tr>
+						<th><input type="checkbox" name="selectAll" onclick="checkAll(this)"></th>
+						<th>Check in date</th>
+						<th>Check out date</th>
+						<th>Title</th>
+						<th>Name</th>
+						<th>No. of adults</th>
+						<th>No. of children</th>
+						<th>E-mail</th>
+						<th>Phone Number</th>
+						<th>booking status</th>
+					</tr>
+					{% for line in requestList%}
+						<tr>
+							<td><input type="checkbox" name="bkLine" id="bkLine" value="{{loop.index}}"></td>
+						{% for item in line %}
+							<td>
+								{{item}}
+							</td>
+						{%endfor%}
+						</tr>
 					{%endfor%}
-					
-				</tr>
-			{%endfor%}
-		</table>
-		<br>
-		<hr>
-		<button class="button button1" name="confirm">Confirm</button>
-		
-	</div>
-	</div>
-</body>
+				</table>
+				<br>
+				<hr>
+				<button class="button button1" name="confirm" disabled="" id="confirm">Confirm</button>
+				
+			</div>
+		</div>
+	</body>
 </html>
