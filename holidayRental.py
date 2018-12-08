@@ -37,6 +37,7 @@ def processPrice(month):
 #open homepage
 @app.route('/')
 def home():
+	reviewFile='static\\reviews.csv'
 	detailList= readFile(reviewFile)
 	return render_template('home.html',detailList=detailList,displayPrice=price)
 
@@ -58,6 +59,7 @@ def writeFile(aList,aFile):
 #turn to rental page and display rental details
 @app.route('/rentalDetail', methods = ['GET'])
 def rentalDetail():
+	simFile='static\\simDetail.csv'
 	simList= readFile(simFile)
 	if not tempBookings:
 		tempBookings.clear()
@@ -71,6 +73,7 @@ def attractions():
 
 @app.route('/backToRequest', methods= ['POST','GET'])
 def backToRequest():
+	simFile='static\\simDetail.csv'
 	simList= readFile(simFile)
 	return render_template('request.html', simList=simList, tempBookings=tempBookings)
 
@@ -90,12 +93,14 @@ def bookingSummary():
 	tempDetails = [checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email,phoneNo,confirmation]
 	tempBookings.extend(tempDetails)
 	
+	requestFile='static\\requestDetail.csv'
 	allBookings=readFile(requestFile)
 	#check if all the details apart from email and phone number are the same
 	for line in allBookings:
 		if(line[:6]==tempBookings[:6]):
 			#prompt message to remind the user of double booking
 			dbMessage = "Double Booking: You have already made this booking!"
+			simFile='static\\simDetail.csv'
 			simList=readFile(simFile)
 			return render_template('request.html', simList=simList, Message=dbMessage, tempBookings=tempBookings)
 	#calculate the staying time and total price 
@@ -117,10 +122,12 @@ def addDetails():
 	newDetail=tempBookings
 	simDetail=[newDetail[0],newDetail[1],newDetail[len(newDetail)-1]]
 	#write information into csv file
+	requestFile='static\\requestDetail.csv'
 	detailList=readFile(requestFile)
 	detailList.append(newDetail)
 	writeFile(detailList,requestFile)
 	#write information without personal details into another csv file
+	simFile='static\\simDetail.csv'
 	simList=readFile(simFile)
 	simList.append(simDetail)
 	writeFile(simList,simFile)
@@ -142,6 +149,7 @@ def addReviews():
 	currentTime=datetime.now().strftime('%d/%m/%Y %H:%M:%S')
 	newReview=[reviewerName,stars,title,review,currentTime]
 	#write reviews into csv file
+	reviewFile='static\\reviews.csv'
 	detailList=readFile(reviewFile)
 	detailList.append(newReview)
 	writeFile(detailList,reviewFile)
@@ -172,6 +180,7 @@ def loginPage():
 	#turn to admin page and display request details
 @app.route('/adminPage', methods = ['GET'])
 def adminPage():
+	requestFile='static\\requestDetail.csv'
 	requestList= readFile(requestFile)
 	return render_template('adminPage.html',requestList=requestList)
 if __name__ == '__main__':
