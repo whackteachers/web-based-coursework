@@ -4,31 +4,31 @@
 	margin-left:4%;
 	width: 50%;
 }
-.calculator{
+/* the right price section of bookingSumaary */
+.price_summary{
 	margin:0;
 	padding: 20px;
 	position: absolute;
-	top: 30%;
-	right: 15%;
-	width: 32%;
-	height: 65%;
+	top: 23%;
+	right: 30%;
+	width: 25%;
+	height: 35%;
 	border-radius: 30px;
 	-moz-box-shadow: 0px 0px 20px #000000;
-    -webkit-box-shadow: 0px 0px 20px #000000;
-    box-shadow: 0px 0px 10px #000000;
+	-webkit-box-shadow: 0px 0px 20px #000000;
+	box-shadow: 0px 0px 10px #000000;
 	background-color: #FFFFFF;
 	}
 #states:nth-child(1){
 	float:left
 }
-#cal{
+/* right text in price_summary */
+.price_info{
 	float: right;
 	font-size: 20px;
 	margin-top: -3px;
 }
-.ratesTable td{
-	padding-right: 20px;
-}
+/* disable dates */
 .reserved{
 	background: #f00 !important;
     color: #fff !important;

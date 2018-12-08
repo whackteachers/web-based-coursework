@@ -18,29 +18,26 @@
 	<div class=main>
 		<h1>All bookings</h1>
 		<br>
-		<input type="checkbox" name="selectAll">Choose all<br>
-		<input type="button" class="button button1" name="confirm">Confirm</button>
+		<button  class="button button1" name="confirm">Confirm</button>
 		<hr>
 		
 		<!-- shows the rental request detail list -->
 		<table>
 			<tr>
-				<td>Check in date</td>
-				<td>Check out date</td>
-				<td>stay time</td>
-				<td>Name</td>
-				<td>No. of people</td>
-				<td>E-mail</td>
-				<td>Phone Number</td>
-				<td>booking status</td>
+				<th><input type="checkbox" name="selectAll">Choose all</th>
+				<th>Check in date</th>
+				<th>Check out date</th>
+				<th>Name</th>
+				<th>No. of people</th>
+				<th>E-mail</th>
+				<th>Phone Number</th>
+				<th>booking status</th>
 			</tr>
 			{% for line in requestList%}
 				<tr>
-				{% for items in line%}
 					<td>
-					{{items}}
+					{{line}}
 					</td>
-				{% endfor%}
 				</tr>
 			{%endfor%}
 		</table>

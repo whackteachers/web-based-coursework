@@ -21,13 +21,11 @@
 		
 		
 		<div class="main" >
-			<script src="../static/calculations.js"></script>
-
-
+			{{Message}}
 			<h1>Request details</h1>
 			
 			<div class="tableBox">
-				<form  onsubmit="return dosubmit()" action="addDetails" method= "post" autocomplete="off" >
+				<form  onsubmit="return dosubmit()" action="bookingSummary" method= "post" autocomplete="off" >
 					<table cellpadding=10 width=400>
 					<!-- set time for check in and out  -->
 						<tr>
@@ -84,7 +82,7 @@
 							
 							<td>
 								<!-- input contact email-->
-								Phone Number(include country code)<input type="text" name="phoneNo" required placeholder="+44123456789">
+								Phone No.(w/ country code)<input type="text" name="phoneNo" required placeholder="+44123456789">
 								<br><br>
 							</td>
 						</tr>
@@ -99,46 +97,7 @@
 				</form>
 				
 			</div>
-			<!-- display the calculation for price change and total price -->
-			<div class="calculator">
-				<p>Price/night: <span id="cal" class="fprice">£{{price}}</span></p>
-				<p>Duration of stay <span id="cal" class="dur">0 nights</span><p>
-				<hr>
-				<p>Total Price: <span id="cal" class="ttp">£0</span></p>
-				
-				<table class="ratesTable">
-					<tbody>
-						<tr>
-							<th style="text-align:left">Months</th>
-							<th>Rates</th>
-						</tr>
-						<tr>
-							<td>Dec-Jan</td>
-							<td class="rates">{{price_rates[0]}}</td>
-						</tr>
-						<tr>
-							<td>Feb</td>
-							<td class="rates">{{price_rates[1]}}</td>
-						</tr>
-						<tr>
-							<td>Mar-Apr</td>
-							<td class="rates">{{price_rates[2]}}</td>
-						</tr>
-						<tr>
-							<td>May-Jun</td>
-							<td class="rates">{{price_rates[3]}}</td>
-						</tr>
-						<tr>
-							<td>Jul-Aug</td>
-							<td class="rates">{{price_rates[4]}}</td>
-						</tr>
-						<tr>
-							<td>Sep-Nov</td>
-							<td class="rates">{{price_rates[5]}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			
 			
 			<!-- display the request list without personal details -->
 			<br><br><br><br>
