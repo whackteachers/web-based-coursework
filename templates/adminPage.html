@@ -28,16 +28,19 @@
 				<th>Check in date</th>
 				<th>Check out date</th>
 				<th>Name</th>
-				<th>No. of people</th>
+				<th>No. of adults</th>
+				<th>No. of children</th>
 				<th>E-mail</th>
 				<th>Phone Number</th>
 				<th>booking status</th>
 			</tr>
 			{% for line in requestList%}
 				<tr>
+				{% for item in line %}
 					<td>
-					{{line}}
+					{{item}}
 					</td>
+					{%endfor%}
 				</tr>
 			{%endfor%}
 		</table>
