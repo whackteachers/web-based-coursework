@@ -20,13 +20,13 @@
 		</div>
 			
 		<div class="main" >
-			<script src="../static/calculations.js"></script>
-		<!-- <h1>Request details</h1> -->
 			
-			<div id="tableBox">
+			
+			
+			<div class="tableBox">
 			{{Message}}
 			<h1>Request details</h1>
-				<form  onsubmit="return dosubmit()" action="addDetails" method= "post" autocomplete="off" >
+				<form  onsubmit="return dosubmit()" action="bookingSummary" method= "post" autocomplete="off" >
 					<table cellpadding=10 width=400>
 					<!-- set time for check in and out  -->
 						<tr>
@@ -77,14 +77,14 @@
 						<tr>
 							<td>
 								<!-- input contact email-->
-								
+								<br>
 								E-mail<input type="email" name="email" required placeholder="example@example.com">
 								<br><br>
 							</td>
 							
 							<td>
 								<!-- input contact email-->
-								Phone Number(include country code)<input type="text" name="phoneNo" required placeholder="+44123456789">
+								Phone No.(w/ country code)<input type="text" name="phoneNo" required placeholder="+44123456789">
 								<br><br>
 							</td>
 						</tr>
@@ -102,49 +102,12 @@
 			</div>
 			<div id="space">
 			</div>
-			<div class="calculator">
-			<!-- display the calculation for price change and total price -->
-			<!-- <h2>&nbsp &nbsp Total Price</h2> -->
-				<!-- <p>Price/night: <span id="cal" class="fprice">£{{price}}</span></p> -->
-				<!-- <p>Duration of stay <span id="cal" class="dur">0 nights</span><p> -->
-				<!-- <hr> -->
-				<!-- <p>Total Price: <span id="cal" class="ttp">£0</span></p> -->
-				
-				<!-- <table class="ratesTable"> -->
-					<!-- <tbody> -->
-						<!-- <tr> -->
-							<!-- <th style="text-align:left">Months</th> -->
-							<!-- <th>Rates</th> -->
-						<!-- </tr> -->
-						<!-- <tr> -->
-							<!-- <td>Dec-Jan</td> -->
-							<!-- <td class="rates">{{price_rates[0]}}</td> -->
-						<!-- </tr> -->
-						<!-- <tr> -->
-							<!-- <td>Feb</td> -->
-							<!-- <td class="rates">{{price_rates[1]}}</td> -->
-						<!-- </tr> -->
-						<!-- <tr> -->
-							<!-- <td>Mar-Apr</td> -->
-							<!-- <td class="rates">{{price_rates[2]}}</td> -->
-						<!-- </tr> -->
-						<!-- <tr> -->
-							<!-- <td>May-Jun</td> -->
-							<!-- <td class="rates">{{price_rates[3]}}</td> -->
-						<!-- </tr> -->
-						<!-- <tr> -->
-							<!-- <td>Jul-Aug</td> -->
-							<!-- <td class="rates">{{price_rates[4]}}</td> -->
-						<!-- </tr> -->
-						<!-- <tr> -->
-							<!-- <td>Sep-Nov</td> -->
-							<!-- <td class="rates">{{price_rates[5]}}</td> -->
-						<!-- </tr> -->
-					<!-- </tbody> -->
-				<!-- </table> -->
-				<!-- <br><br><br><br> -->
-				<!-- display the request list without personal details -->
-				<h2>&nbsp &nbsp Requests List</h2>
+			
+			<!-- display the request list without personal details -->
+			<!-- <br><br><br><br> -->
+			
+			<div class="rentalDetails">
+			<h2>Requests List</h2>
 				<table class="requestTable">
 					<tr>
 						<th>Check In</th>
