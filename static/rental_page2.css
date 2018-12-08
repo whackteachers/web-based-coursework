@@ -2,16 +2,27 @@
 #tableBox{
 	display: inline-table;
 	margin-left:4%;
-	padding:20px;
-	border-radius: 30px;
-	-moz-box-shadow: 0px 0px 20px #000000;
-    -webkit-box-shadow: 0px 0px 20px #000000;
-    box-shadow: 0px 0px 10px #000000;
-	background-color: #FFFFFF;
+	/* padding:20px; */
+	/* border-radius: 30px; */
+	/* -moz-box-shadow: 0px 0px 20px #000000; */
+    /* -webkit-box-shadow: 0px 0px 20px #000000; */
+    /* box-shadow: 0px 0px 10px #000000; */
+	/* background-color: #FFFFFF; */
 	float:left;
 }
-.calculator{
+
+/* the right price section of bookingSumaary */
+.price_summary{
+	margin:0;
+	padding: 20px;
+	position: absolute;
+	top: 23%;
+	right: 30%;
+	width: 25%;
+	height: 35%;
+}
 	
+.rentalDetails{
 	margin:0;
 	padding: 20px;
 	/* position: absolute; */
@@ -25,12 +36,6 @@
     -webkit-box-shadow: 0px 0px 20px #000000;
     box-shadow: 0px 0px 10px #000000;
 	background-color: #FFFFFF;
-	}
-	
-#space{
-	float:left;
-	width: 15vw;
-	height:40vh;
 }
 .main{
 	height:120vh!important;
@@ -38,30 +43,20 @@
 #states:nth-child(1){
 	float:left
 }
-#cal{
+/* right text in price_summary */
+.price_info{
 	float: right;
 	font-size: 20px;
 	margin-top: -3px;
 }
-.ratesTable td{
-	padding-right: 20px;
-}
+/* disable dates */
 .reserved{
 	background: #f00 !important;
     color: #fff !important;
 }
 input{
-border:1.3px solid #008CBA!important;}
+	border:1.3px solid #008CBA!important;}
 h2{
-	 border-left: 6px solid #008CBA!important;
-  background-color: lightgrey!important;
-}
-
-.requestTable {
-    border: 1px solid black;
-	width: 200px; 
-	min-height: 25px; 
-	line-height: 25px; 
-	border-collapse: collapse;
-    
+	border-left: 6px solid #008CBA!important;
+	background-color: lightgrey!important;
 }
