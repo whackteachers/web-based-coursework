@@ -38,6 +38,8 @@ def processPrice(month):
 @app.route('/')
 def home():
 	detailList= readFile(reviewFile)
+	for line in detailList:
+		line[1]= int(line[1])
 	return render_template('home.html',detailList=detailList,displayPrice=price)
 
 #Set file reading and writing function	
@@ -59,6 +61,7 @@ def writeFile(aList,aFile):
 @app.route('/rentalDetail', methods = ['GET'])
 def rentalDetail():
 	simList= readFile(simFile)
+	#clear the temporary array contents
 	if not tempBookings:
 		tempBookings.clear()
 		pricing.clear()
@@ -147,6 +150,8 @@ def addReviews():
 	writeFile(detailList,reviewFile)
 	#send reviws to html
 	detailList= readFile(reviewFile)
+	for line in detailList:
+		line[1]= int(line[1])
 	
 	return render_template('home.html',detailList=detailList)
 

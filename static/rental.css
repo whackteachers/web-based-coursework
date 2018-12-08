@@ -97,24 +97,27 @@ input{
 	padding: 5px;
 }
 
-/*attributes to small map for attractions and size for pictures*/
+/*attributes to all maps and size for pictures*/
 .mapouter{
 	text-align:right;
 	height:24.5vh;
 	width:15.5vw;
 }
 /* for map in the home page */
-.addMap{
+.addMap_wrapper{
 	text-align: left;
 	right: 10%;
 	margin: 0;
-	border:none;
-	height: 20%;
+	height: 43%;
 	width: 80%;
 	overflow:hidden;
 	background:none!important;
 }
-
+.addMap{
+	border:none;
+	width:30vw; 
+	height:50vh;
+}
 .gmap_canvas {
 	overflow:hidden;
 	background:none!important;

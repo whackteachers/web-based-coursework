@@ -7,10 +7,10 @@
 .mini{
 	position:absolute;
 	top: 100px;
-	right: 10%;
+	right: 13%;
 	text-align:left;
 	grid-area: address;
-	width: 30vw;
+	width: 33vw;
 }
 #address{
 	width:300px;
@@ -48,8 +48,7 @@
 	list-style-type: none;
 }
 
-.rmc{
-	margin-left: 10em;
+#rmc{
 	columns: 2;
 	-webkit-columns: 2;
 	-moz-columns: 2;
@@ -75,11 +74,16 @@
 	grid-template-areas:
 		'fhalf shalf'
 }
-#sText{
+#fhalf ul li,
+#shalf ul li{
+	margin-bottom: 20px;
+}
+.sText{
 	font-size: small;
 }
 #reviewTitle{
 	display: inline;
+	margin-right: 10px;
 }
 #reviewTime{
 	color: gray;

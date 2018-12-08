@@ -4,7 +4,7 @@
 
 /* Position the image container (needed to position the left and right arrows) */
 .gallery {
-	width: 70%;
+	width: 62%;
 	height: 70%;
 	position: relative;
 	grid-area: gallery;

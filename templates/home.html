@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>    
 		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
 		<title>Property homepage</title> 
@@ -23,7 +23,7 @@
 			</ul>
 			
 			<div class=price>£{{displayPrice}}/ night<br>(*without rates)</div>
-			<a href="/rentalDetail" style="padding:0"><button class="button button1" type="button" id=rent>Rent Now!</button><a>
+			<a href="/rentalDetail" style="padding:0"><button class="button button1" type="button" id=rent>Rent Now!</button></a>
 			<a href="/loginPage" class="login">admin login</a>
 		</div>			
 
@@ -33,39 +33,39 @@
 				<div class="gallery">
 					<div class="photos">
 						<div class="numbertext">1 / 9</div>
-							<img src="../static/property/property1.jpg" style="width:100%">
+							<img src="../static/property/property1.jpg" style="width:100%" alt="property image">
 					</div>
 					<div class="photos">
 						<div class="numbertext">2 / 9</div>
-							<img src="../static/property/property2.jpg" style="width:100%">
+							<img src="../static/property/property2.jpg" style="width:100%" alt="property image">
 					</div>
 					<div class="photos">
 						<div class="numbertext">3 / 9</div>
-							<img src="../static/property/property3.jpg" style="width:100%">
+							<img src="../static/property/property3.jpg" style="width:100%" alt="property image">
 					</div>
 					<div class="photos">
 						<div class="numbertext">4 / 9</div>
-							<img src="../static/property/property4.jpg" style="width:100%">
+							<img src="../static/property/property4.jpg" style="width:100%" alt="property image">
 					</div>
 					<div class="photos">
 						<div class="numbertext">5 / 9</div>
-							<img src="../static/property/property5.jpg" style="width:100%">
+							<img src="../static/property/property5.jpg" style="width:100%" alt="property image">
 					</div>
 					<div class="photos">
 						<div class="numbertext">6 / 9</div>
-							<img src="../static/property/property6.jpg" style="width:100%">
+							<img src="../static/property/property6.jpg" style="width:100%" alt="property image">
 					</div>
 					<div class="photos">
 						<div class="numbertext">7 / 9</div>
-							<img src="../static/property/property7.jpg" style="width:100%">
+							<img src="../static/property/property7.jpg" style="width:100%" alt="property image">
 					</div>
 					<div class="photos">
 						<div class="numbertext">8 / 9</div>
-							<img src="../static/property/property8.jpg" style="width:100%">
+							<img src="../static/property/property8.jpg" style="width:100%" alt="property image">
 					</div>
 					<div class="photos">
 						<div class="numbertext">9 / 9</div>
-							<img src="../static/property/property9.jpg" style="width:100%">
+							<img src="../static/property/property9.jpg" style="width:100%" alt="property image">
 					</div>
 					
 					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -73,31 +73,31 @@
 					
 						<div class="row">
 							<div class="column">
-							  <img class="demo cursor" src="../static/property/property1.jpg" style="width:100%" onclick="currentSlide(1)">
+							  <img class="demo cursor" src="../static/property/property1.jpg" style="width:100%" onclick="currentSlide(1)" alt="image thumbnail">
 							</div>
 							<div class="column"> 
-							  <img class="demo cursor" src="../static/property/property2.jpg" style="width:100%" onclick="currentSlide(2)">
+							  <img class="demo cursor" src="../static/property/property2.jpg" style="width:100%" onclick="currentSlide(2)" alt="image thumbnail">
 							</div>
 							<div class="column">
-							  <img class="demo cursor" src="../static/property/property3.jpg" style="width:100%" onclick="currentSlide(3)">
+							  <img class="demo cursor" src="../static/property/property3.jpg" style="width:100%" onclick="currentSlide(3)" alt="image thumbnail">
 							</div>
 							<div class="column">
-							  <img class="demo cursor" src="../static/property/property4.jpg" style="width:100%" onclick="currentSlide(4)">
+							  <img class="demo cursor" src="../static/property/property4.jpg" style="width:100%" onclick="currentSlide(4)" alt="image thumbnail">
 							</div>
 							<div class="column">
-							  <img class="demo cursor" src="../static/property/property5.jpg" style="width:100%" onclick="currentSlide(5)">
+							  <img class="demo cursor" src="../static/property/property5.jpg" style="width:100%" onclick="currentSlide(5)" alt="image thumbnail">
 							</div>
 							<div class="column">
-							  <img class="demo cursor" src="../static/property/property6.jpg" style="width:100%" onclick="currentSlide(6)">
+							  <img class="demo cursor" src="../static/property/property6.jpg" style="width:100%" onclick="currentSlide(6)" alt="image thumbnail">
 							</div>
 							<div class="column">
-							  <img class="demo cursor" src="../static/property/property7.jpg" style="width:100%" onclick="currentSlide(7)">
+							  <img class="demo cursor" src="../static/property/property7.jpg" style="width:100%" onclick="currentSlide(7)" alt="image thumbnail">
 							</div>
 							<div class="column">
-							  <img class="demo cursor" src="../static/property/property8.jpg" style="width:100%" onclick="currentSlide(8)">
+							  <img class="demo cursor" src="../static/property/property8.jpg" style="width:100%" onclick="currentSlide(8)" alt="image thumbnail">
 							</div>
 							<div class="column">
-							  <img class="demo cursor" src="../static/property/property9.jpg" style="width:100%" onclick="currentSlide(9)">
+							  <img class="demo cursor" src="../static/property/property9.jpg" style="width:100%" onclick="currentSlide(9)" alt="image thumbnail">
 							</div>
 						</div>
 
@@ -106,9 +106,11 @@
 			<!--open new column-->
 			<!--display little map-->
 			<div class="mini">
-				<div class="addMap">
-						<iframe src="https://maps.google.com/maps?q=Lochend%20Park%20View&t=&z=17&ie=UTF8&iwloc=&output=embed" style="border:none;">
+				<div class="addMap_wrapper">
+					<!-- <div class="gmap_canvas"> -->
+						<iframe class="addMap" src="https://maps.google.com/maps?q=Lochend%20Park%20View&t=&z=17&ie=UTF8&iwloc=&output=embed">
 						</iframe>
+					<!-- </div> -->
 				</div>
 				<!--display address-->
 				<h2>Address</h2>
@@ -162,26 +164,26 @@
 					<div class="subGrid">
 						<div id=fhalf>
 							<ul>
-								<li>Heating<br><span id="sText">gas central heating</span></li><br>
-								<li>Parking<br><span id="sText">large free car park next to the building</span></li><br>
-								<li>Garage<br><span id="sText">free private underground car park</span></li><br>
-								<li>Iron & Board</li><br>
-								<li>Hair Dryer</li><br>
-								<li>Elevator<br><span id="sText">access to the apartment and the underground car park</span> </li><br>
-								<li>Television<br><span id="sText">32'LED SAMSUNG</span></li><br>
-								<li>Balcony<br><span id="sText">large balcony with table and 2 chairs</span></li><br>
+								<li>Heating<br><span class="sText">gas central heating</span></li>
+								<li>Parking<br><span class="sText">large free car park next to the building</span></li>
+								<li>Garage<br><span class="sText">free private underground car park</span></li>
+								<li>Iron & Board</li>
+								<li>Hair Dryer</li>
+								<li>Elevator<br><span class="sText">access to the apartment and the underground car park</span></li>
+								<li>Television<br><span class="sText">32'LED SAMSUNG</span></li>
+								<li>Balcony<br><span class="sText">large balcony with table and 2 chairs</span></li>
 							</ul>
 						</div>
 						<div id=shalf>
 							<ul>
-								<li>secure entry system and CCTV</li><br>
-								<li>Linens Provided<br><span id="sText">all linens provided</span></li><br>
-								<li>Washing Machine<br><span id="sText">electrolux washing machine with dryer</span></li><br>
-								<li>Tumble Dryer<br><span id="sText">1 clothes dryer</span></li><br>
-								<li>Dining Area<br><span id="sText">large table with 5 chairs and children highchair</span></li><br>
-								<li>Internet<br><span id="sText">Wi-Fi access</span></li><br>
-								<li>Wireless Internet</li><br>
-								<li>Free Wifi</li><br>
+								<li>secure entry system and CCTV</li>
+								<li>Linens Provided<br><span class="sText">all linens provided</span></li>
+								<li>Washing Machine<br><span class="sText">electrolux washing machine with dryer</span></li>
+								<li>Tumble Dryer<br><span class="sText">1 clothes dryer</span></li>
+								<li>Dining Area<br><span class="sText">large table with 5 chairs and children highchair</span></li>
+								<li>Internet<br><span class="sText">Wi-Fi access</span></li>
+								<li>Wireless Internet</li>
+								<li>Free Wifi</li>
 							</ul>
 						</div>
 					</div>
@@ -192,17 +194,14 @@
 					<div id=rooms class ="anchor">
 						<h2>Rooms</h2>
 						
-						<div id=rmc>
-							<ul>
-								<li>Size: 645 sq. ft.</li>
-								<li>1 twin en-suite bedroom</li>
-								<li>1 kitchen</li>
-								<li>2 bathroom</li>
-								<li>1 master bedroom</li>
-								<li>1 living room</li>
-							</ul>
-						</div>
-
+						<ul id="rmc">
+							<li>Size: 645 sq. ft.</li>
+							<li>1 twin en-suite bedroom</li>
+							<li>1 kitchen</li>
+							<li>2 bathroom</li>
+							<li>1 master bedroom</li>
+							<li>1 living room</li>
+						</ul>
 					</div>
 					<!--transport-->
 					<div id="transport" class ="anchor">
@@ -310,37 +309,20 @@
 					{{line[0]}} <span id="reviewTime">posted on {{line[4]}}</span><br><br>
 					<h3 id="reviewTitle">{{line[2]}}</h3>
 					<!-- display respective number of colored star according to rating -->
-					<!-- {# -->
-						<!-- {% set starNum = line[1]|int %} -->
-						<!-- {% for i in range(1,5)%} -->
-						<!-- {% if i == starNum %} -->
-							<!-- <span class="icon" style="color: #F0FF00;">★</span> -->
-							<!-- {% else %} -->
-							<!-- display remaining stars in black -->
-							<!-- <span class="icon">★</span> -->
-						<!-- {% endif %} -->
-						<!-- {%endfor%} -->
-						<!-- {% int(line[1])for line in range(5-line[1])%} -->
-						<!-- {%endfor%} -->
-					<!-- #} -->
-					<span class="icon">★</span>
-					<span class="icon">★</span>
-					<span class="icon">★</span>
-					<span class="icon">★</span>
-					<span class="icon">★</span>
+						{% for i in range(0,5)%}
+							{% if i < line[1] %}
+								<span class="icon" style="color: #ffa500;">★</span>
+							{% else %}
+								<!-- display remaining stars in black -->
+								<span class="icon">★</span>
+							{% endif %}
+						{%endfor%}
 					<br>
 					<span id="reviewText">{{line[3]}}</span><br>
 					</div>
 				{%endfor%}
-				
-				
-					
-				<!-- name ----------------------------------------------------------------------------------------------- -->
-				<!-- name  \   <Title> *****                                                                             | -->
-				<!-- 		|   <review>                                                                                 |-->
-				<!--        _____________________________________________________________________________________________ -->
 			</div>
 		</div>
-		<script type="text/javascript" src="../static/gallery.js"></script>
+		<script src="../static/gallery.js"></script>
 	</body>
 </html>
