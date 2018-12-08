@@ -30,17 +30,17 @@
 						<tr>
 							<td>
 								<label for="from" >Check In</label>
-								<input type="text" id="from" name="checkIn" required placeholder="dd/mm/yyyy">
+								<input type="text" id="from" name="checkIn" required placeholder="dd/mm/yyyy" value="{{tempBookings[0]}}">
 							</td>
 							
 							<td>
 								<label for="to">Check out</label>
-								<input type="text" id="to" name="checkOut" required placeholder="dd/mm/yyyy">
+								<input type="text" id="to" name="checkOut" required placeholder="dd/mm/yyyy" value="{{tempBookings[1]}}">
 							</td>
 						</tr>
 						<!-- input title and name	 -->
 						<tr>
-							<td>Title<input list="title" name="title" required >
+							<td>Title<input list="title" name="title" required value="{{tempBookings[2]}}">
 								<datalist id="title">
 									<option value="Mr">
 									<option value="Mrs">
@@ -49,12 +49,12 @@
 								</datalist>
 							</td>
 							
-							<td>Name<input type="text" name="firstName" required >
+							<td>Name<input type="text" name="firstName" required value="{{tempBookings[3]}}">
 							</td>
 						</tr>
 						<!-- set numbers of guests -->
 						<tr>
-							<td>Adult(s)<input list="adultsNumbers" name="adultsNumbers" required >
+							<td>Adult(s)<input list="adultsNumbers" name="adultsNumbers" required value="{{tempBookings[4]}}">
 							  <datalist id="adultsNumbers">
 								<option value="1">
 								<option value="2">
@@ -63,7 +63,7 @@
 							  </datalist>
 							</td>
 							
-							<td>Child(ren)<input list="childrenNumbers" name="childrenNumbers" required >
+							<td>Child(ren)<input list="childrenNumbers" name="childrenNumbers" required value="{{tempBookings[5]}}">
 							 <datalist id="childrenNumbers" >
 								<option value="0">
 								<option value="1">
@@ -76,26 +76,20 @@
 							<td>
 								<!-- input contact email-->
 								<br>
-								E-mail<input type="email" name="email" required placeholder="example@example.com">
+								E-mail<input type="email" name="email" required placeholder="example@example.com" value="{{tempBookings[6]}}">
 								<br><br>
 							</td>
 							
 							<td>
 								<!-- input contact email-->
-								Phone No.(w/ country code)<input type="text" name="phoneNo" required placeholder="+44123456789">
+								Phone No.(w/ country code)<input type="text" name="phoneNo" required placeholder="+44123456789" value="{{tempBookings[7]}}">
 								<br><br>
 							</td>
 						</tr>
-						<!-- submit button	 -->
-						<tr>
-						<td>
-						</td>
-							<td>
-								&nbsp <button class="button button1"  type="submit" value="submit" id="submit">Submit</button>
-							</td>
-						</tr>
+						
 					</table>
-					
+					<!-- submit button	 -->
+					<button class="button button1"  type="submit" value="submit" id="submit">Submit</button>
 				</form>
 			</div>
 			<!-- display the request list without personal details -->

@@ -59,7 +59,7 @@ def writeFile(aList,aFile):
 @app.route('/rentalDetail', methods = ['GET'])
 def rentalDetail():
 	simList= readFile(simFile)
-	return render_template('request.html', simList=simList)
+	return render_template('request.html', simList=simList, tempBookings=tempBookings)
 
 #turn to local attactions page
 @app.route('/attractions', methods = ['GET'])
@@ -69,7 +69,7 @@ def attractions():
 @app.route('/backToRequest', methods= ['POST','GET'])
 def backToRequest():
 	simList= readFile(simFile)
-	return render_template('request.html', simList=simList)
+	return render_template('request.html', simList=simList, tempBookings=tempBookings)
 
 @app.route('/bookingSummary', methods= ['POST','GET'])
 def bookingSummary():
