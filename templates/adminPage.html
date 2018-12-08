@@ -8,6 +8,7 @@
 			<link rel="stylesheet" href="../static/rental.css" type="text/css" />
 			<link rel="stylesheet" href="../static/adminPage.css" type="text/css" />
 			<script>
+				<!-- function to let user to tick all boxes in a go -->
 				function checkAll(box){
 					checkboxes = document.getElementsByName('bkLine');
 					var n=checkboxes.length
@@ -15,17 +16,21 @@
 						checkboxes[i].checked = box.checked;
 					}
 				}
-				
+				<!-- lock confirm button until the owner choose at least 1 booking -->
 				function disableConfirm() {
+				console.log(document.getElementById("bkLine").checked);
+				console.log(document.getElementById("confirm").disabled);
 					if (document.getElementById("bkLine").checked) {
 						document.getElementById("confirm").disabled = false;
 					} else {
 						document.getElementById("confirm").disabled = true;
 					}
 				}
+				
 			</script>
 	</head>
 	<body>
+		<!-- top bar to allow user to go back to home page or view attractions -->
 		<div class="navBar">
 			<ul>
 				<li><a href="/">Home</a></li>
@@ -51,7 +56,9 @@
 					</tr>
 					{% for line in requestList%}
 						<tr>
-							<td><input type="checkbox" name="bkLine" id="bkLine" value="{{loop.index}}"></td>
+							<td>
+								<input type="checkbox" name="bkLine" id="bkLine" value="{{loop.index}}" onchange="disableConfirm()">
+							</td>
 						{% for item in line %}
 							<td>
 								{{item}}
@@ -62,7 +69,7 @@
 				</table>
 				<br>
 				<hr>
-				<button class="button button1" name="confirm" disabled="" id="confirm">Confirm</button>
+				<button class="button button1" name="confirm" disabled id="confirm">Confirm</button>
 				
 			</div>
 		</div>

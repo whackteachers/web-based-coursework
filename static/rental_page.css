@@ -1,4 +1,4 @@
-/* rental page css */
+/* BookingSummary and request css */
 #tableBox{
 	display: inline-table;
 	margin-left:4%;
@@ -10,6 +10,7 @@
 	background-color: #FFFFFF;
 	float:left;
 }
+/* whitebox to display the calculation of price */
 .bookings,
 .price_summary{
 	margin:0;
@@ -26,39 +27,44 @@
     box-shadow: 0px 0px 10px #000000;
 	background-color: #FFFFFF;
 }
+/* create spacing between the input boxes */
 #bookingForm td{
 	padding: 10px; 
 	width: 100px;
 	margin-bottom: 10px;
 }
+/* whitebox to display the table of bookings */
 .bookings{
 	float: none;
 	top: 6.5em;
 	right: 20vw;
 	height: 42vh;
 }
+/* control height of the main light blue background */
 .main{
 	height:120vh!important;
 }
-#states:nth-child(1){
-	float:left
-}
+/* push the number data for price calculation to the right most of the box */
 .price_info{
 	float: right;
 	font-size: 20px;
 	margin-top: -3px;
 }
+/* highlight the booked dates in red */
 .reserved{
 	background: #f00 !important;
     color: #fff !important;
 }
+/* blue border to all input boxes */
 input{
-	border:1.3px solid #008CBA!important;}
+	border:1.3px solid #008CBA!important;
+}
+/* create a bar for the headings */
 h2{
 	border-left: 6px solid #008CBA!important;
 	background-color: lightgrey!important;
 }
-
+/* the table displaying all the bookings from server */
 .requestTable{
     border: 1px solid black;
     width: 200px;
@@ -66,6 +72,7 @@ h2{
     line-height: 25px;
     border-collapse: collapse;
 }
+/* add padding space to all the cells in requestTable */
 .requestTable td{
 	padding: 8px;
 }

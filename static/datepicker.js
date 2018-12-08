@@ -1,9 +1,7 @@
 $( function() {
-//initalize all the check in and check out dates
+//declare the datepicker to display UK date format
 var dateFormat = "dd/mm/yy",
-/*["18/12/2018","23/12/2018", "1/1/2019"]*/
-/*["21/12/2018","30/12/2018","10/1/2019"]*/
-
+//initalize all the check in and check out dates to arrays
 arrive = document.getElementsByClassName("checkin"),
 leave = document.getElementsByClassName("checkout"),
 checkIn = [],
@@ -19,9 +17,6 @@ for (var i=0; i<arrive.length; i++){
 	  defaultDate: "+1w",
 	  changeMonth: true,
 	  numberOfMonths: 1,
-	  // onChangeMonthYear : function(date){
-		  
-	  // },
 	  //disable all checkIn dates
 	  beforeShowDay: function(date){
 			for (var i = 0; i < checkIn.length; i++){
@@ -53,6 +48,7 @@ for (var i=0; i<arrive.length; i++){
 	defaultDate: "+1w",
 	changeMonth: true,
 	numberOfMonths: 1,
+	 //disable all checkout dates
 	beforeShowDay: function(date){
 		for (var i = 0; i < checkOut.length; i++){
 			var s = jQuery.datepicker.formatDate(dateFormat, date);

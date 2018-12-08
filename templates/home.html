@@ -11,7 +11,9 @@
 	</head>
 
 	<body>
+		<!-- top navigation bar -->
 		<div class="navBar">
+			<!-- tabs leading display down to respective sections -->
 			<ul>
 				<li><a href="#description">Apartment Description</a></li>
 				<li><a href="#location">Location</a></li>
@@ -21,8 +23,9 @@
 				<li><a href="#reviews">Reviews</a></li>
 				<li><a href="/attractions">Local Attractions</a></li>
 			</ul>
-			
+			<!-- price tag -->
 			<div class=price>£{{displayPrice}}/ night<br>(*without rates)</div>
+			
 			<form style="padding:0" action="/rentalDetail" method="get">
 				<button class="button button1" type="submit" id=rent>Rent Now!</button>
 			</form>
@@ -258,7 +261,7 @@
 					
 					Name:
 					<input id="namebox" type="text" name="reviewerName" required maxlength="32" size="20" placeholder="Your name" >
-					<!-- Star rating -->
+					<!-- clickable Star rating -->
 					&#9; Rating:
 					<div class="rating">
 						<label>

@@ -7,19 +7,22 @@
 		<link rel="stylesheet" href="../static/rental_page.css" type="text/css" />
 	</head>
 	<body>
+		<!-- top bar to allow user to go back to home page or view attractions -->
 		<div class="navBar">
 			<ul>
 				<li><a href="/">Home</a></li>
 				<li><a href="/attractions">Attractions</a></li>
 			</ul>
 		</div>
+		
 		<div class="main">
+			<!-- show all the inputs get from form to let user verify the details are correct -->
 			<h1>Summary</h1>
 			<h2>Please check your booking details and price before checkout</h2>
+			<!-- button to let user go back and change the details or just exit the page -->
 			<form action="/backToRequest" method="get">
 				<button class="button button1" type="submit">Go Back</button>
 			</form>
-            <!-- <a href="/backToRequest"><button class="button button1">Go Back</button></a> -->
 			<p>From {{tempDetails[0]}} to {{tempDetails[1]}}</p>
 			<p>Name: {{tempDetails[2]}} {{tempDetails[3]}}</p>
 			<p>No. of people: {{tempDetails[4]}} adults, {{tempDetails[5]}} children</p>
@@ -33,10 +36,10 @@
 				<hr>
 				<p>Total Price: <span class="price_info">£{{pricing[2]}}</span></p>
 			</div>
+			<!-- button to start append all of these as a new booking to server -->
 			<form action="/addDetails" method="get">
 				<button class="button button1" type="submit">Checkout</button>
 			</form>
-			<!-- <a href="/addDetails"><button class="button button1">Checkout</button></a> -->
 		</div>
 	</body>
 </html>

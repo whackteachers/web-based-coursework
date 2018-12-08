@@ -12,6 +12,7 @@
 		<script src="../static/disableSecondSubmit.js"></script>
 	</head>
 	<body>
+		<!-- top bar to allow user to go back to home page or view attractions -->
 		<div class="navBar">
 			<ul>
 				<li><a href="/">Home</a></li>
@@ -21,6 +22,7 @@
 			
 		<div class="main" >
 			<div id="tableBox">
+			<!-- message after a success booking or double booking alert below -->
 			{{Message}}
 			<h1>Request details</h1>
 				<form  onsubmit="return dosubmit()" action="bookingSummary" method= "post" autocomplete="off" >
@@ -88,9 +90,10 @@
 					<button class="button button1"  type="submit" value="submit" id="submit">Submit</button>
 				</form>
 			</div>
+			<!-- display the bookings without personal details -->
 			<div class="bookings">
-				<!-- display the request list without personal details -->
 				<h2>&nbsp;&nbsp; All Bookings</h2>
+				<!-- table with 3 columns displaying checkIn, checkOut, and whether the booking is confirmed or not -->
 				<table class="requestTable">
 					<tr>
 						<th>Check In</th>
