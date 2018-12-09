@@ -11,22 +11,12 @@
 				<!-- function to let user to tick all boxes in a go -->
 				function checkAll(box){
 					checkboxes = document.getElementsByName('bkLine');
-					var n=checkboxes.length
+					var n = checkboxes.length;
+					
 					for(var i=0 ; i<n ; i++) {
 						checkboxes[i].checked = box.checked;
 					}
 				}
-				<!-- lock confirm button until the owner choose at least 1 booking -->
-				function disableConfirm() {
-				console.log(document.getElementById("bkLine").checked);
-				console.log(document.getElementById("confirm").disabled);
-					if (document.getElementById("bkLine").checked) {
-						document.getElementById("confirm").disabled = false;
-					} else {
-						document.getElementById("confirm").disabled = true;
-					}
-				}
-				
 			</script>
 	</head>
 	<body>
@@ -41,36 +31,40 @@
 			<div class="tableBox">
 				<h1>All bookings</h1>
 				<!-- shows the rental request detail list -->
-				<table>
-					<tr>
-						<th><input type="checkbox" name="selectAll" onclick="checkAll(this)"></th>
-						<th>Check in date</th>
-						<th>Check out date</th>
-						<th>Title</th>
-						<th>Name</th>
-						<th>No. of adults</th>
-						<th>No. of children</th>
-						<th>E-mail</th>
-						<th>Phone Number</th>
-						<th>booking status</th>
-					</tr>
-					{% for line in requestList%}
+				<form action="/confirmBookings" method="post">
+					<table>
 						<tr>
-							<td>
-								<input type="checkbox" name="bkLine" id="bkLine" value="{{loop.index}}" onchange="disableConfirm()">
-							</td>
-						{% for item in line %}
-							<td>
-								{{item}}
-							</td>
-						{%endfor%}
+							<th><input type="checkbox" name="selectAll" onclick="checkAll(this)"></th>
+							<th>Check in date</th>
+							<th>Check out date</th>
+							<th>Title</th>
+							<th>Name</th>
+							<th>No. of adults</th>
+							<th>No. of children</th>
+							<th>E-mail</th>
+							<th>Phone Number</th>
+							<th>booking status</th>
 						</tr>
-					{%endfor%}
-				</table>
-				<br>
-				<hr>
-				<button class="button button1" name="confirm" disabled id="confirm">Confirm</button>
+						{% for line in requestList%}
+							<tr>
+								<td>
+									<input type="checkbox" name="bkLine" id="bkLine" value="{{loop.index0}}">
+								</td>
+							{% for item in line %}
+								<td>
+									{{item}}
+								</td>
+							{%endfor%}
+							</tr>
+						{%endfor%}
+					</table>
+					<br>
+					<hr>
 				
+					<button class="button button1" type="submit" name="confirm" id="confirm">Confirm</button>
+				</form>
+				<!-- display message after the owner confirm booking(s) -->
+				<b>{{success_message}}</b>
 			</div>
 		</div>
 	</body>

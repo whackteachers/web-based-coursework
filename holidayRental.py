@@ -6,14 +6,17 @@ from ctypes import *
 from datetime import datetime
 
 app = Flask(__name__)
-
-enterTime = datetime.now().month
+#----Global variables----
+#base price of property
 price = 71
+#buffer list to store booking details before actually writing to csv files
 tempBookings = []
 pricing = []
+#file name variable for all functions
 reviewFile='static\\reviews.csv'
 simFile='static\\simDetail.csv'
 requestFile='static\\requestDetail.csv'
+#----Global variables----
 
 #respective rates for different months:
 #(previous year)december-january, Feburary, March-April, May-June, July-August, September-November
@@ -31,7 +34,7 @@ def processPrice(month):
 		applyRates = rates[4]
 	elif (month in (9,10,11)):
 		applyRates = rates[5]
-	
+	#round off the price to 2 decimal place to avoid long number
 	return round(price* applyRates,2)
 	
 #open homepage
@@ -55,7 +58,6 @@ def writeFile(aList,aFile):
 		write=csv.writer(outFile)
 		write.writerows(aList)
 	return	
-	 
 	 
 #turn to rental page and display rental details
 @app.route('/rentalDetail', methods = ['GET'])
@@ -89,17 +91,17 @@ def bookingSummary():
 	phoneNo=request.form['phoneNo']
 	confirmation='unconfirmed'
 	#gather all the details 
-	tempDetails = [checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email,phoneNo,confirmation]
-	tempBookings.extend(tempDetails)
+	tempBookings = [checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email,phoneNo,confirmation]
+	#tempBookings.extend(tempDetails)
 	
 	allBookings=readFile(requestFile)
 	#check if all the details apart from email and phone number are the same
-	for line in allBookings:
-		if(line[:6]==tempBookings[:6]):
-			#prompt message to remind the user of double booking
-			dbMessage = "Double Booking: You have already made this booking!"
-			simList=readFile(simFile)
-			return render_template('request.html', simList=simList, Message=dbMessage, tempBookings=tempBookings)
+	# for line in allBookings:
+		# if(line[:6]==tempBookings[:6]):
+			# #prompt message to remind the user of double booking
+			# dbMessage = "Double Booking: You have already made this booking!"
+			# simList=readFile(simFile)
+			# return render_template('request.html', simList=simList, Message=dbMessage, tempBookings=tempBookings)
 	#calculate the staying time and total price 
 	d1 = datetime.strptime(checkIn, "%d/%m/%Y")
 	d2 = datetime.strptime(checkOut, "%d/%m/%Y")
@@ -110,7 +112,7 @@ def bookingSummary():
 	#gather all the price information
 	tempPricing = [nightPrice, stay, totalPrice]
 	pricing.extend(tempPricing)
-	return render_template('bookingSummary.html', tempDetails=tempDetails, pricing=pricing)
+	return render_template('bookingSummary.html', tempDetails=tempBookings, pricing=pricing)
 	
 #botton to submit detail 
 @app.route('/addDetails', methods= ['POST','GET'])
@@ -173,10 +175,39 @@ def adminLogin():
 def loginPage():
 	return render_template('loginPage.html')
 	
-	#turn to admin page and display request details
-@app.route('/adminPage', methods = ['GET'])
+#turn to admin page and display request details
+@app.route('/adminPage', methods = ['POST','GET'])
 def adminPage():
-	requestList= readFile(requestFile)
+	requestList = readFile(requestFile)
 	return render_template('adminPage.html',requestList=requestList)
+@app.route('/confirmBookings', methods = ['POST','GET'])
+def	confirmBookings():
+	#get the index of booking that needs confirmBookings
+	indexes = request.form.getlist('bkLine')
+	#convert result from string to int 
+	indexes = list(map(int, indexes))
+	#update the respective booking line status in both simplified and full booking detail files
+	updateStatus(requestFile,indexes)
+	updateStatus(simFile,indexes)
+	
+	#get the updated version of booking details
+	updateList= readFile(requestFile)
+	success_message = "You have successfully confirmed " + str(len(indexes)) + " booking(s)!"
+	return render_template('adminPage.html',requestList=updateList,success_message=success_message)
+
+def updateStatus(fp, select):
+	#buffer out all contents
+	oldList=readFile(fp)
+	#clear all the content in csv
+	open(fp,'w').truncate()
+	#edit the respective row booking status to confirmed if selected
+	for idx,line in enumerate(oldList):
+		if (idx in select):
+			line[len(line)-1] = 'confirmed'
+
+	#write the updated list back to csv
+	writeFile(oldList,fp)
+	return select
+
 if __name__ == '__main__':
  app.run(debug = True)
