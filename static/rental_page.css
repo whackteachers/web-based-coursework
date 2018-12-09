@@ -11,7 +11,7 @@
 	float:left;
 }
 /* whitebox to display the calculation of price */
-.bookings,
+
 .price_summary{
 	margin:0;
 	padding: 20px;
@@ -27,6 +27,7 @@
     box-shadow: 0px 0px 10px #000000;
 	background-color: #FFFFFF;
 }
+
 /* create spacing between the input boxes */
 #bookingForm td{
 	padding: 10px; 
@@ -35,10 +36,17 @@
 }
 /* whitebox to display the table of bookings */
 .bookings{
+	margin:0;
+	padding: 20px;
+	position: absolute;
 	float: none;
 	top: 6.5em;
 	right: 20vw;
-	height: 50vh;
+	border-radius: 30px;
+	-moz-box-shadow: 0px 0px 20px #000000;
+    -webkit-box-shadow: 0px 0px 20px #000000;
+    box-shadow: 0px 0px 10px #000000;
+	background-color: #FFFFFF;
 }
 /* control height of the main light blue background */
 .main{
@@ -65,9 +73,9 @@ h2{
 	background-color: lightgrey!important;
 }
 /* the table displaying all the bookings from server */
-.requestTable{
+.requestTable {
     border: 1px solid black;
-    width: 200px;
+    width: 30%;
     min-height: 25px;
     line-height: 25px;
     border-collapse: collapse;
