@@ -59,14 +59,18 @@ def writeFile(aList,aFile):
 		write.writerows(aList)
 	return	
 	 
+def reset():
+	if tempBookings:
+		del tempBookings[:]
+		del pricing[:]
+	return
 #turn to rental page and display rental details
 @app.route('/rentalDetail', methods = ['GET'])
 def rentalDetail():
 	simList= readFile(simFile)
-	#clear the temporary array contents
-	if not tempBookings:
-		pricing = []
-	return render_template('request.html', simList=simList, tempBookings=[])
+	#clear the temporary lists
+	reset()
+	return render_template('request.html', simList=simList, tempBookings=tempBookings)
 
 #turn to local attactions page
 @app.route('/attractions', methods = ['GET'])
@@ -91,17 +95,17 @@ def bookingSummary():
 	phoneNo=request.form['phoneNo']
 	confirmation='unconfirmed'
 	#gather all the details 
-	tempBookings = [checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email,phoneNo,confirmation]
-	#tempBookings.extend(tempDetails)
+	tempDetails = [checkIn,checkOut,title,firstName,adultsNumbers,childrenNumbers,email,phoneNo,confirmation]
+	tempBookings.extend(tempDetails)
 	
 	allBookings=readFile(requestFile)
 	#check if all the details apart from email and phone number are the same
-	# for line in allBookings:
-		# if(line[:6]==tempBookings[:6]):
-			# #prompt message to remind the user of double booking
-			# dbMessage = "Double Booking: You have already made this booking!"
-			# simList=readFile(simFile)
-			# return render_template('request.html', simList=simList, Message=dbMessage, tempBookings=tempBookings)
+	for line in allBookings:
+		if(all(line[i]==tempBookings[i] for i in range(6))):
+			#prompt message to remind the user of double booking
+			dbMessage = "Double Booking: You have already made this booking!"
+			simList=readFile(simFile)
+			return render_template('request.html', simList=simList, Message=dbMessage, tempBookings=tempBookings)
 	#calculate the staying time and total price 
 	d1 = datetime.strptime(checkIn, "%d/%m/%Y")
 	d2 = datetime.strptime(checkOut, "%d/%m/%Y")
@@ -112,7 +116,7 @@ def bookingSummary():
 	#gather all the price information
 	tempPricing = [nightPrice, stay, totalPrice]
 	pricing.extend(tempPricing)
-	return render_template('bookingSummary.html', tempDetails=tempBookings, pricing=pricing)
+	return render_template('bookingSummary.html', tempDetails=tempDetails, pricing=pricing)
 	
 #botton to submit detail 
 @app.route('/addDetails', methods= ['POST','GET'])
@@ -128,12 +132,14 @@ def addDetails():
 	simList=readFile(simFile)
 	simList.append(simDetail)
 	writeFile(simList,simFile)
+	#clear the temporary lists
+	reset()
 	#alert that the information has been submitted
 	Message = "Your request has been sent to the admin, please check your email later!"
 	#send information without personal details to html
 	simList= readFile(simFile)
 	
-	return render_template('request.html',simList=simList,Message=Message, tempBookings=[])
+	return render_template('request.html',simList=simList,Message=Message, tempBookings=tempBookings)
 
 #function for reviews submit bottpn
 @app.route('/addReviews', methods= ['POST','GET'])
