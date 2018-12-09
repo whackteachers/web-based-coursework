@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+	<!-- The property we choose for making this website is obtained from https://www.homeaway.co.uk/p1175680 -->
 	<head>    
 		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
 		<title>Property homepage</title> 
@@ -23,12 +24,13 @@
 				<li><a href="#reviews">Reviews</a></li>
 				<li><a href="/attractions">Local Attractions</a></li>
 			</ul>
-			<!-- price tag -->
+			<!-- price tag on the left of rent button-->
 			<div class=price>£{{displayPrice}}/ night<br>(*without rates)</div>
-			
+			<!-- rent button at the right of the navBar -->
 			<form style="padding:0" action="/rentalDetail" method="get">
 				<button class="button button1" type="submit" id=rent>Rent Now!</button>
 			</form>
+			<!-- little link to login page at the far right of the navBar -->
 			<a href="/loginPage" class="login">admin login</a>
 		</div>			
 
@@ -112,10 +114,8 @@
 			<!--display little map-->
 			<div class="mini">
 				<div class="addMap_wrapper">
-					<!-- <div class="gmap_canvas"> -->
-						<iframe class="addMap" src="https://maps.google.com/maps?q=Lochend%20Park%20View&t=&z=17&ie=UTF8&iwloc=&output=embed">
-						</iframe>
-					<!-- </div> -->
+					<iframe class="addMap" src="https://maps.google.com/maps?q=Lochend%20Park%20View&t=&z=17&ie=UTF8&iwloc=&output=embed">
+					</iframe>
 				</div>
 				<!--display address-->
 				<h2>Address</h2>
