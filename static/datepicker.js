@@ -44,7 +44,6 @@ for (var i=0; i<arrive.length; i++){
 //choose check out date
   to = $( "#to" ).datepicker({
 	minDate: 0,
-	firstDay: '1',
 	defaultDate: "+1w",
 	changeMonth: true,
 	numberOfMonths: 1,
